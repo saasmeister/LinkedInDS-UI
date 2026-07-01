@@ -1,0 +1,33 @@
+<!-- @dsCard group="Principles" viewport="700x260" name="The four types" subtitle="Single · carousel · infographic · quote — at a glance" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:22px 26px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
+  .t { display:flex; gap:14px; align-items:flex-start; }
+  .ic { width:42px; height:52px; border-radius:5px; flex:none; background:var(--canvas-light-bg); border:1.5px solid var(--canvas-light-line); position:relative; overflow:hidden; }
+  .h { font-family:var(--font-display); font-weight:700; font-size:16px; letter-spacing:-.01em; margin:0 0 3px; }
+  .b { font-size:13px; line-height:1.45; color:var(--muted,#5a5a5a); margin:0; }
+  .tag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted,#b5b5b5); margin-top:4px; }
+</style></head>
+<body>
+  <div class="grid">
+    <div class="t">
+      <div class="ic"><div style="position:absolute;left:8px;right:8px;top:10px;height:5px;border-radius:2px;background:var(--brand-primary)"></div><div style="position:absolute;left:13px;bottom:9px;width:16px;height:16px;border-radius:50%;background:var(--canvas-light-soft);border:1.5px solid var(--brand-primary)"></div></div>
+      <div><p class="h">Single visual</p><p class="b"><b>Visual-led.</b> Eyebrow + heading + <b>one</b> short line max — the visual dominates. No paragraphs.</p><span class="tag">No swipe · visual carries it</span></div>
+    </div>
+    <div class="t">
+      <div class="ic" style="background:var(--canvas-loud-bg);border-color:var(--canvas-loud-bg)"><div style="position:absolute;left:7px;right:7px;top:9px;height:4px;border-radius:2px;background:rgba(255,255,255,.5)"></div><div style="position:absolute;left:7px;top:17px;width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.8)"></div></div>
+      <div><p class="h">Carousel</p><p class="b">One story, one idea per slide. Cover → context → problem → steps → result → back.</p><span class="tag">Swipe in footer</span></div>
+    </div>
+    <div class="t">
+      <div class="ic"><div style="position:absolute;inset:7px;display:grid;grid-template-columns:1fr 1fr;gap:3px"><div style="background:var(--canvas-light-soft);border-radius:2px"></div><div style="background:var(--canvas-light-soft);border-radius:2px"></div><div style="background:var(--canvas-section-bg);border-radius:2px"></div><div style="background:var(--canvas-section-bg);border-radius:2px"></div></div></div>
+      <div><p class="h">Infographic</p><p class="b">One dense cheat-sheet. Card grid + a results row in the section colour.</p><span class="tag">No swipe · depth is the value</span></div>
+    </div>
+    <div class="t">
+      <div class="ic"><div style="position:absolute;left:8px;top:8px;font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--canvas-light-soft);line-height:1">“</div><div style="position:absolute;left:8px;right:10px;top:22px;height:4px;border-radius:2px;background:var(--brand-primary)"></div><div style="position:absolute;left:8px;bottom:8px;width:12px;height:12px;border-radius:50%;background:var(--canvas-light-soft)"></div></div>
+      <div><p class="h">Quote visual</p><p class="b">One pulled sentence, left-aligned, centred. Photo + name + role beneath. <b>No body copy.</b></p><span class="tag">No swipe · minimal · visual-led</span></div>
+    </div>
+  </div>
+</body></html>

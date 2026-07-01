@@ -1,0 +1,10 @@
+/* ============================================================
+   FONTS  ·  default family only — fully overridable
+   ------------------------------------------------------------
+   Inter is the system's neutral DEFAULT, not a brand value. Users
+   point --brand-font / --brand-font-display (tokens/brand.css) at
+   their own family and load it themselves. We pull Inter from
+   Google Fonts so the system renders out-of-the-box.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');

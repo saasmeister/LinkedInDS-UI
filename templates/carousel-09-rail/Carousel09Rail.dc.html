@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Carousel 09 · rail" description="SLIDE-CONTENT REFERENCE ONLY — do NOT ship this standalone file. The deliverable is a <section data-type=\"carousel\"> with three data-carousel variants of .cslide slides INSIDE Visual Board.html (see SKILL GATE 4). Lift the slide arc/content from here; never hand off this rail as a .html page. — REFERENCE LAYOUT — a multi-slide STORY arc: hook cover → before (the struggle) → turning point (section colour) → what changed → result (big number, section) → takeaway + CTA. Canvas roles carry the emotional beats. Swipe arrow in every footer. Generic, token-driven; each .art is a true 1080×1350 slide shown scaled in the rail." -->
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<script src="./ds-base.js"></script>
+<style>
+  html,body{margin:0}
+  body{background:#e6e6e6;min-height:100vh;box-sizing:border-box;padding:48px}
+  .rail{display:flex;gap:40px;width:max-content;align-items:flex-start}
+  .slot{display:flex;flex-direction:column;gap:12px;flex:none}
+  .lab{font-family:'Inter',system-ui,sans-serif;font-size:15px;font-weight:600;color:#6b6b6b}
+  .card{width:454px;height:567px;border-radius:3px;overflow:hidden;position:relative;box-shadow:0 6px 26px rgba(0,0,0,.12);flex:none}
+  .art{position:absolute;top:0;left:0;width:1080px;height:1350px;transform:scale(.42);transform-origin:top left;box-sizing:border-box;padding:var(--margin);font-family:var(--font-body)}
+  .chrome{position:absolute;left:var(--margin);right:var(--margin);display:flex;justify-content:space-between;align-items:center}
+  .name{font-weight:600;font-size:22px;letter-spacing:.08em}
+  .arrow{width:84px;height:84px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;opacity:.85}
+</style>
+</helmet>
+
+<div class="rail">
+
+  <div class="slot"><span class="lab">01 · cover — loud</span>
+    <div class="card"><div class="art" data-screen-label="Story 01 cover" style="background:var(--canvas-loud-bg);color:var(--canvas-loud-fg);--muted:var(--canvas-loud-muted);--soft:var(--canvas-loud-soft);--rule:var(--canvas-loud-line)">
+      <div style="position:absolute;left:var(--margin);right:var(--margin);top:150px"><span style="display:block;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--muted)">A story about</span><h2 style="font-family:var(--font-display);font-weight:700;font-size:88px;line-height:1.07;letter-spacing:-.02em;margin:16px 0 0">How I went from 0 to 10k in 90 days</h2><p style="font-weight:400;font-size:32px;line-height:1.42;color:var(--muted);margin:30px 0 0;max-width:740px">What actually moved the needle — swipe →</p></div>
+      <div class="chrome" style="bottom:var(--margin)"><span class="name">Your name</span><span class="arrow"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></span></div>
+    </div></div>
+  </div>
+
+  <div class="slot"><span class="lab">02 · before — light</span>
+    <div class="card"><div class="art" data-screen-label="Story 02 before" style="background:var(--canvas-light-bg);color:var(--canvas-light-fg);--muted:var(--canvas-light-muted);--soft:var(--canvas-light-soft);--rule:var(--canvas-light-line)">
+      <div class="chrome" style="top:var(--margin)"><span class="name">Your name</span><span class="name" style="color:var(--muted)">Category</span></div>
+      <div style="position:absolute;left:var(--margin);right:var(--margin);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center"><span style="display:block;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--muted)">WHERE IT STARTED</span><h2 style="font-family:var(--font-display);font-weight:700;font-size:76px;line-height:1.07;letter-spacing:-.02em;margin:16px 0 0">Posting daily, hearing crickets</h2><p style="font-weight:400;font-size:32px;line-height:1.42;color:var(--muted);margin:30px 0 0;max-width:740px">Lots of effort, almost no reach. Something was off.</p></div>
+      <div class="chrome" style="bottom:var(--margin)"><span></span><span class="arrow"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></span></div>
+    </div></div>
+  </div>
+
+  <div class="slot"><span class="lab">03 · turning point — section</span>
+    <div class="card"><div class="art" data-screen-label="Story 03 turn" style="background:var(--canvas-section-bg);color:var(--canvas-section-fg);--muted:var(--canvas-section-muted);--soft:var(--canvas-section-soft);--rule:var(--canvas-section-line)">
+      <div class="chrome" style="top:var(--margin)"><span class="name">Your name</span><span class="name" style="color:var(--muted)">Category</span></div>
+      <div style="position:absolute;left:var(--margin);right:var(--margin);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center"><span style="display:block;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--accent)">THE SHIFT</span><h2 style="font-family:var(--font-display);font-weight:700;font-size:74px;line-height:1.07;letter-spacing:-.02em;margin:16px 0 0">I stopped <span style="color:var(--accent)">broadcasting</span> and started <span style="color:var(--accent)">answering</span></h2></div>
+      <div class="chrome" style="bottom:var(--margin)"><span></span><span class="arrow"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></span></div>
+    </div></div>
+  </div>
+
+  <div class="slot"><span class="lab">04 · what I did — light</span>
+    <div class="card"><div class="art" data-screen-label="Story 04 did" style="background:var(--canvas-light-bg);color:var(--canvas-light-fg);--muted:var(--canvas-light-muted);--soft:var(--canvas-light-soft);--rule:var(--canvas-light-line)">
+      <div class="chrome" style="top:var(--margin)"><span class="name">Your name</span><span class="name" style="color:var(--muted)">Category</span></div>
+      <div style="position:absolute;left:var(--margin);right:var(--margin);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center"><span style="display:block;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--muted)">WHAT CHANGED</span><h2 style="font-family:var(--font-display);font-weight:700;font-size:70px;line-height:1.07;letter-spacing:-.02em;margin:16px 0 0">One post = one real question I&rsquo;d been asked</h2><p style="font-weight:400;font-size:32px;line-height:1.42;color:var(--muted);margin:30px 0 0;max-width:740px">Wrote to the person who asked, not to an audience.</p></div>
+      <div class="chrome" style="bottom:var(--margin)"><span></span><span class="arrow"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></span></div>
+    </div></div>
+  </div>
+
+  <div class="slot"><span class="lab">05 · result — section</span>
+    <div class="card"><div class="art" data-screen-label="Story 05 result" style="background:var(--canvas-section-bg);color:var(--canvas-section-fg);--muted:var(--canvas-section-muted);--soft:var(--canvas-section-soft);--rule:var(--canvas-section-line)">
+      <div class="chrome" style="top:var(--margin)"><span class="name">Your name</span><span class="name" style="color:var(--muted)">Category</span></div>
+      <div style="position:absolute;left:var(--margin);right:var(--margin);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center"><span style="display:block;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--accent)">THE RESULT</span><span style="font-family:var(--font-display);font-weight:700;font-size:230px;line-height:.9;letter-spacing:-.04em;margin-top:10px">10k</span><p style="font-weight:400;font-size:32px;line-height:1.42;color:var(--muted);margin:30px 0 0;max-width:740px">followers, and inbound leads every week.</p></div>
+      <div class="chrome" style="bottom:var(--margin)"><span></span><span class="arrow"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></span></div>
+    </div></div>
+  </div>
+
+  <div class="slot"><span class="lab">06 · takeaway — loud · CTA</span>
+    <div class="card"><div class="art" data-screen-label="Story 06 back" style="background:var(--canvas-loud-bg);color:var(--canvas-loud-fg);--muted:var(--canvas-loud-muted);--soft:var(--canvas-loud-soft);--rule:var(--canvas-loud-line)">
+      <div style="position:absolute;left:var(--margin);right:var(--margin);top:150px"><span style="display:block;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--muted)">THE LESSON</span><h2 style="font-family:var(--font-display);font-weight:700;font-size:82px;line-height:1.07;letter-spacing:-.02em;margin:16px 0 0">Write to one person. Reach the many.</h2><div style="margin-top:40px;display:inline-flex;align-items:center;min-height:112px;padding:0 56px;border:1.5px solid var(--muted);border-radius:18px;background:rgba(255,255,255,.1);font-family:var(--font-display);font-weight:700;font-size:32px">Follow for more →</div></div>
+      <div class="chrome" style="bottom:var(--margin)"><span class="name">Your name</span><span class="name" style="color:var(--muted)">Category / function</span></div>
+    </div></div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1100, &quot;height&quot;: 680 },
+  &quot;primary&quot;:   { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;secondary&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;accent&quot;:    { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;tint&quot;:      { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: null, &quot;min&quot;: 3, &quot;max&quot;: 16, &quot;tsType&quot;: &quot;number&quot; },
+  &quot;font&quot;:      { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;&quot;, &quot;options&quot;: [&quot;&quot;, &quot;Inter&quot;, &quot;Plus Jakarta Sans&quot;, &quot;Space Grotesk&quot;, &quot;Sora&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  apply() {
+    const p = this.props || {};
+    const r = document.documentElement.style;
+    if (p.primary)   r.setProperty('--brand-primary', p.primary);
+    if (p.secondary) r.setProperty('--brand-secondary', p.secondary);
+    if (p.accent)    r.setProperty('--brand-accent', p.accent);
+    if (p.tint != null) r.setProperty('--brand-tint', p.tint + '%');
+    const font = p.font;
+    if (font) {
+      const id = 'tweak-font-' + font.replace(/\s+/g, '-');
+      if (!document.getElementById(id)) {
+        const l = document.createElement('link'); l.id=id; l.rel='stylesheet';
+        l.href='https://fonts.googleapis.com/css2?family='+font.replace(/\s+/g,'+')+':wght@400;500;600;700;800&display=swap';
+        document.head.appendChild(l);
+      }
+      r.setProperty('--brand-font', "'" + font + "', system-ui, sans-serif");
+      r.setProperty('--brand-font-display', "'" + font + "', system-ui, sans-serif");
+    }
+  }
+  componentDidMount(){this.apply();}
+  componentDidUpdate(){this.apply();}
+  renderVals(){return {};}
+}
+</script>
+</body>
+</html>

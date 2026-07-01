@@ -1,0 +1,12 @@
+.claude/
+.DS_Store
+
+# build output — assembled by variants/build.mjs, not committed
+variants/dist/
+
+# standalone server deps
+variants/standalone-server/node_modules/
+variants/standalone-server/.env
+
+# core publish staging (throwaway git tree)
+variants/.publish/

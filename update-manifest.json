@@ -1,0 +1,346 @@
+{
+  "name": "LinkedIn Visual Design System",
+  "channel": "master",
+  "version": "1.22.0",
+  "published": "2026-06-26",
+  "manifestUrl": "REPLACE_WITH_PUBLISHED_MANIFEST_URL",
+  "checkCadenceHours": 24,
+  "autoApply": false,
+  "releases": [
+    {
+      "version": "1.22.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Anti-slop QA gate (GATE 8): every variant is self-audited against references/anti-slop.md before delivery — refusing AI-slop tropes (hero-metric, eyebrow-reflex, side-stripe cards, gradient text, three-tints-of-one-layout) while never breaking readable contrast or type hierarchy. Adapted for 1080×1350 from the Impeccable anti-pattern system.",
+      "templates": [],
+      "components": [],
+      "notes": [
+        "references/anti-slop.md = the checklist retranslated to social visuals + the style-pack exemption (an invoked Doodle/Paper pack is voice, not slop; never-exempt checks still hold).",
+        "tools/anti-slop/ vendors Impeccable's deterministic detector (detect-antipatterns.js) + critique flow under Apache-2.0; the 700KB live-browser tooling was left out. Optional machine pass; judgment calls stay with the agent.",
+        "Wired into the SKILL description as a 6th hard rule, the RUNBOOK as step 6, and a new 'Anti-Slop Gate' Principles card."
+      ]
+    },
+    {
+      "version": "1.21.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Unattended daily auto-update: a scheduled GitHub Action (~12:00) clones the private master repo and installs new versions automatically, honouring ownership (overrides/ + client/ untouched).",
+      "templates": [],
+      "components": [],
+      "notes": [
+        "New: .github/workflows/daily-update.yml (cron, runs on GitHub's servers whether or not the project is open).",
+        "New scripts: tools/check-update.cjs (exit 10 = behind) + tools/apply-update.cjs (installs master-owned files only).",
+        "Setup in tools/CONNECT.md: set MASTER_REPO + add DS_SYNC_TOKEN secret (read-only PAT). A static design system can't self-run a daemon — a scheduled Action is the only true unattended sync."
+      ]
+    },
+    {
+      "version": "1.20.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Single entry point: the app's sub-views (Visual Board, START HERE + their JS) moved into app/ so only LinkedIn Visual Designer.html is openable. Verified all three views still load.",
+      "templates": [],
+      "components": [],
+      "notes": [
+        "Moved files: app/Visual Board.html, app/visual-board.js, app/board-editor.js, app/START HERE.html.",
+        "Relative paths corrected (../styles.css, ../overrides, ../ui_kits, ../_ds_bundle.js); board-editor base-guesses gained a ../ depth.",
+        "App-shell iframe srcs + start-here template links repointed at app/."
+      ]
+    },
+    {
+      "version": "1.19.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Paper style pack (editorial, outline-only, paper-grain) + style packs reframed as composable, colour/font-agnostic skillsets the assistant reaches for and blends.",
+      "templates": [],
+      "components": [],
+      "notes": [
+        "Packs compose: composition packs (Bento = tile mosaic) layer with skin packs (Doodle, Paper) — e.g. Bento blocks in Doodle style.",
+        "Every pack is colour- & font-agnostic: it supplies the treatment, wears the brand layer (--brand-font, --brand-primary accent); named palette/font is a fallback, signature display font is optional.",
+        "Used proactively by the assistant, named by the user, or set as a base style. Root SKILL.md + style-packs/README.md rewritten."
+      ]
+    },
+    {
+      "version": "1.18.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Bento style pack — premium dark-first editorial: near-black canvas, asymmetric hairline-tile mosaic, oversized Inter-Tight type, mono metadata, one accent glow. Translated to the 1080×1350 archetypes.",
+      "templates": [],
+      "components": [],
+      "notes": [
+        "Tiles share the #0A0A0A canvas; 1px hairline borders (not fills) define them; clean 32px radius, flat, no tilt.",
+        "Brand colour folds in as the single accent (focal stat/word/CTA + soft glow on the focal tile only).",
+        "A pack restyles the look only — one board, 3 variants, analogy-led, safe margins, GATE 7 still win."
+      ]
+    },
+    {
+      "version": "1.17.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Style Packs — optional aesthetic layers switched on by name. First pack: Doodle (hand-drawn), translated from web-UI to the 1080×1350 LinkedIn archetypes.",
+      "templates": [],
+      "components": [],
+      "notes": [
+        "style-packs/<slug>/ = SKILL.md + a @dsCard group=\"Style Packs\" card; users can drop in their own (skeuomorphic, neumorphic, bento).",
+        "Doodle: sketch borders, solid offset shadows, hand-lettered headline (Delius Swash Caps), cream canvas + dot-grid, doodle marks from the Icon Library, subtle tilt.",
+        "A pack restyles the look only — one board, 3 variants, analogy-led, safe margins, GATE 7 still win; brand colour folds in as the accent."
+      ]
+    },
+    {
+      "version": "1.16.2",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Board editor: the Icon Library is now a drag source — your drawn/imported icons appear in My library, ready to drag onto the canvas (recolour to brand).",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": [
+        "My library auto-surfaces IconKit marks, custom icons (localStorage 'icon-custom') and illustrations under 'From the Icon Library'.",
+        "Icons render inline so they recolour to --brand-primary/--icon-ink; dropped icons carry data-shape=\"icon\" (resize keeps aspect).",
+        "Refreshes live on icon-changed / storage events; empty kit shows the graceful empty state."
+      ]
+    },
+    {
+      "version": "1.16.1",
+      "date": "2026-06-26",
+      "level": "patch",
+      "summary": "Settings: editable profile (name · role · @handle · photo) feeds the live in-feed preview and the visual's @handle.",
+      "templates": [],
+      "components": ["start-here"],
+      "notes": []
+    },
+    {
+      "version": "1.16.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Settings rebuilt as ONE page with a live LinkedIn feed preview (left = all brand options, right = the post recolouring as you change settings). No more 5 steps.",
+      "templates": ["start-here"],
+      "components": ["start-here"],
+      "notes": []
+    },
+    {
+      "version": "1.15.1",
+      "date": "2026-06-26",
+      "level": "patch",
+      "summary": "App nav: replaced the heavy left rail with a small floating dock (icon-only), full-bleed views; reads as a tool, not an app shell.",
+      "templates": [],
+      "components": [],
+      "notes": []
+    },
+    {
+      "version": "1.15.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "One workspace: LinkedIn Visual Designer.html wraps Visual Board, Icon Library and Settings into a single app (each is the standalone file loaded as a pane; nothing renamed).",
+      "templates": [],
+      "components": [],
+      "notes": ["Image Library stubbed as 'Soon'. Standalone files keep working; chat stays the primary surface."]
+    },
+    {
+      "version": "1.14.0",
+      "date": "2026-06-26",
+      "level": "minor",
+      "summary": "Icon & illustration library added to the core (components/icons/): brand-agnostic hand-drawn engine + editor, draw/import (incl. SVG/Figma), recolours to the brand, ships empty.",
+      "templates": [],
+      "components": ["icon-kit", "icon-editor"],
+      "notes": ["Web components <icon-mark>/<icon-ill> + IconKit.mark('…'); edits persist. New 'Icon Library' card."]
+    },
+    {
+      "version": "1.13.1",
+      "date": "2026-06-25",
+      "level": "patch",
+      "summary": "Editor: the upload button now sits under the My library heading where it belongs.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.13.0",
+      "date": "2026-06-25",
+      "level": "minor",
+      "summary": "Board '+ New visual' / 'Iterate' open a modal that prepares the full /linkedin-visual prompt (paste post / describe change) and copies it to hand to the assistant.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": ["The artifact can't auto-send into the chat (cross-origin) — copy-and-paste is the path; the AI still leads."]
+    },
+    {
+      "version": "1.12.2",
+      "date": "2026-06-25",
+      "level": "patch",
+      "summary": "Board buttons: reliable copy in sandboxed previews (execCommand → async API → pre-selected fallback box).",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.12.1",
+      "date": "2026-06-25",
+      "level": "patch",
+      "summary": "Board buttons copy a ready-made /linkedin-visual prompt (rules baked in) instead of just nudging to chat — agent-first.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.12.0",
+      "date": "2026-06-25",
+      "level": "minor",
+      "summary": "Always-on enforcement (the flow + five hard rules apply whenever connected and asked, no slash needed) and Visual Board exposed as a one-click Template.",
+      "templates": ["visual-board"],
+      "components": [],
+      "notes": ["/linkedin-visual and /ds-setup remain explicit triggers."]
+    },
+    {
+      "version": "1.11.0",
+      "date": "2026-06-25",
+      "level": "minor",
+      "summary": "Editor: multi-select (marquee + shift-click); the whole selection moves and Delete/Duplicate/Colour/Bring-to-front act on all at once.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.10.3",
+      "date": "2026-06-25",
+      "level": "patch",
+      "summary": "Editor: drop new elements onto the pasteboard outside the canvas; the element toolbar tracks the selection everywhere.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.10.2",
+      "date": "2026-06-25",
+      "level": "patch",
+      "summary": "Editor: off-canvas elements stay selectable (DOM containment); smoother edge-crossing (snap only inside the canvas); click empty stage clears selection.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.10.1",
+      "date": "2026-06-25",
+      "level": "patch",
+      "summary": "Editor: small/zoomed-out elements are grabbable again — resize handles hide under ~44px on screen so the whole box is a move target.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.10.0",
+      "date": "2026-06-25",
+      "level": "minor",
+      "summary": "Editor: pasteboard — park elements outside the 1080×1350 artboard while composing; off-canvas content is clipped on export and in thumbnails.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.9.0",
+      "date": "2026-06-25",
+      "level": "minor",
+      "summary": "Editor: colour-swatch picker (the DS's real colours + custom, saved per board) and a magnetic 12-column grid with Grid (blue) / Margins (red unsafe zone) guides.",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": ["Snapping always on; hold Alt/Option to place freely. State persists."]
+    },
+    {
+      "version": "1.8.0",
+      "date": "2026-06-25",
+      "level": "minor",
+      "summary": "Editor: palette items carry icons; My library auto-detects the DS's own icon set via assets/library-manifest.json; UI chrome locked to Inter (only the canvas adopts --brand-font).",
+      "templates": [],
+      "components": ["board-editor"],
+      "notes": []
+    },
+    {
+      "version": "1.7.0",
+      "date": "2026-06-25",
+      "level": "minor",
+      "summary": "Hard rule GATE 7: fill the canvas — content on every frame/slide/panel must be vertically balanced, never top-pinned leaving the bottom half empty.",
+      "templates": ["carousel-04-steps"],
+      "components": [],
+      "notes": []
+    },
+    {
+      "version": "1.6.1",
+      "date": "2026-06-24",
+      "level": "patch",
+      "summary": "Slash-command reliability: both commands front-loaded into the SKILL description so they fire even when the body isn't weighed heavily; a pasted post is not build permission.",
+      "templates": [],
+      "components": [],
+      "notes": []
+    },
+    {
+      "version": "1.6.0",
+      "date": "2026-06-24",
+      "level": "minor",
+      "summary": "Slash-command triggers: /ds-setup opens the START HERE brand wizard; /linkedin-visual enters the full RUNBOOK with all five hard rules enforced (questions first, never build immediately).",
+      "templates": [],
+      "components": [],
+      "notes": []
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-06-24",
+      "level": "minor",
+      "summary": "One unified, numbered template library: merged the 'Reference ·' and 'Bold ·' sets (removed 15 overlaps), renamed everything to templates/<type>-NN-<slug>/ (single-01…48, quote-01…04, infographic-01…06, carousel-01…09).",
+      "templates": ["single-01…48", "quote-01…04", "infographic-01…06", "carousel-01…09"],
+      "components": [],
+      "notes": ["Carousels are explicitly free to use ANY archetype per slide. GATE 6 rewired to the new scheme + references/method.md as the catalog."]
+    },
+    {
+      "version": "1.4.0",
+      "date": "2026-06-24",
+      "level": "minor",
+      "summary": "Bold Visual Method + 65 named archetype templates (theme-agnostic .dc.html, recolour live from the brand layer) + a content layer (overrides/voice.md, icp.md, offer.md). Templates picker → 83.",
+      "templates": ["bold-*", "single-1*", "quote-*", "carousel-0*", "infographic-4*", "layers-5*", "metaphor-a*", "reframe-c*", "chart-f*", "teardown-*", "ui-*"],
+      "components": [],
+      "notes": ["The Bold Visual Method shipped as a Principles card + references/method.md, wired into SKILL.md GATE 6 as the build philosophy."]
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-06-24",
+      "level": "minor",
+      "summary": "Archetype template library (9 reference templates × A/B/C variants incl. carousels-on-board), a Canva-style board editor, and winning-variant selection.",
+      "templates": [
+        "pictograph-visual", "trajectory-visual", "testimonial-visual", "layered-visual", "data-visual",
+        "infographic-tree", "infographic-flow", "infographic-annotated", "infographic-matrix", "infographic-roadmap",
+        "carousel-listicle", "carousel-story", "carousel-framework"
+      ],
+      "components": ["board-editor"],
+      "notes": [
+        "Carousels live on the Visual Board as a scrollable filmstrip; reference templates are SLIDE-CONTENT ONLY.",
+        "Board editor: select/move/resize/edit-text, library rail, duplicate/recolour, zoom, per-variant persistence.",
+        "GATE 5 (analogy-led) + GATE 6 (rotate archetypes) added; removed the Brief Studio and first-run setup kits.",
+        "START HERE is now a guided 5-step brand wizard with one-click 'Copy for the assistant'."
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-06-22",
+      "level": "minor",
+      "summary": "Visual Board (one Canva-style board per project, per-visual PNG/HTML export) plus two hard behaviour gates: ask-before-build, and all-visuals-on-one-board.",
+      "templates": ["Visual Board"],
+      "components": [],
+      "notes": [
+        "GATE 1: the assistant asks questions and offers directions before building any visual.",
+        "GATE 2: every visual is a block on one Visual Board \u2014 never a file per visual.",
+        "Setup screen fixes: starts at step 1, live preview reflects font/colour, input focus retained."
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-06-22",
+      "level": "minor",
+      "summary": "Foundation release — the colour- & font-agnostic system, four templates, two kits, and the master/branch model.",
+      "templates": ["Single visual", "Quote visual", "Carousel", "Infographic"],
+      "components": [
+        "Canvas", "Chrome", "Headline", "Stat", "Quote", "InfoCard", "Cta", "BrowserMock", "FeedPost"
+      ],
+      "notes": [
+        "24px hard safe band on all visuals.",
+        "Brief Studio (intake + live feed preview) and Visual Library (export PNG/HTML + approve-to-learn).",
+        "Master \u2192 branch model: overrides/ + client/ are never overwritten."
+      ]
+    }
+  ]
+}

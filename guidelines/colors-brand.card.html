@@ -1,0 +1,20 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Brand layer" subtitle="The few values a user overrides — everything else derives" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; }
+  .row { display:flex; gap:14px; padding:20px; }
+  .sw { flex:1; display:flex; flex-direction:column; gap:8px; }
+  .chip { height:74px; border-radius:10px; border:1px solid var(--rule,rgba(0,0,0,.08)); }
+  .nm { font-size:13px; font-weight:700; color:#18181b; }
+  .vr { font-size:11px; font-family:ui-monospace,monospace; color:var(--muted,#8a8a8a); }
+</style></head>
+<body>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:var(--brand-primary)"></div><span class="nm">Primary</span><span class="vr">--brand-primary</span></div>
+  <div class="sw"><div class="chip" style="background:var(--brand-secondary)"></div><span class="nm">Secondary</span><span class="vr">--brand-secondary</span></div>
+  <div class="sw"><div class="chip" style="background:var(--brand-accent)"></div><span class="nm">Accent</span><span class="vr">--brand-accent</span></div>
+  <div class="sw"><div class="chip" style="background:var(--brand-font);background:#fff;border:1px dashed var(--rule,#cfcfcf);display:flex;align-items:center;justify-content:center;font-weight:700;color:#18181b">Aa</div><span class="nm">Font</span><span class="vr">--brand-font</span></div>
+</div>
+</body></html>

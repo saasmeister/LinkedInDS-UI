@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Single 13 · nested squares" description="Bold Visual Method archetype (Chart). Theme-agnostic; recolours from the brand layer (primary/secondary/accent/tint/font). One mechanism, flat canvas, focal = strongest tone." -->
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<script src="./ds-base.js"></script>
+<style>html,body{margin:0}body{background:#e6e6e6;display:flex;align-items:flex-start;justify-content:center;padding:48px;box-sizing:border-box;min-height:100vh}</style>
+</helmet>
+
+<div data-screen-label="Chart F1 · nested squares" style="position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--canvas-light-bg);font-family:var(--font-body);">
+            <div style="position:absolute;inset:56px;border:1.5px dashed var(--canvas-light-line);pointer-events:none;"></div>
+            <div style="position:absolute;top:48px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;"><span style="font-weight:600;font-size:22px;letter-spacing:0.04em;color:color-mix(in srgb, var(--canvas-light-muted) 72%, var(--canvas-light-bg));">Name</span><span style="font-weight:600;font-size:22px;letter-spacing:0.04em;color:color-mix(in srgb, var(--canvas-light-muted) 72%, var(--canvas-light-bg));">Category / function</span></div>
+            <div style="position:absolute;top:130px;left:56px;right:56px;"><div style="font-weight:700;font-size:66px;line-height:1.02;color:var(--brand-primary);letter-spacing:-0.02em;">Where my week<br>actually goes</div></div>
+            <div style="position:absolute;left:180px;top:460px;width:640px;height:640px;background:var(--canvas-light-soft);border:2px solid var(--brand-primary);z-index:1;"></div><div style="position:absolute;left:180px;top:520px;width:580px;height:580px;background:var(--canvas-light-line);border:2px solid var(--brand-primary);z-index:2;"></div><div style="position:absolute;left:180px;top:610px;width:490px;height:490px;background:var(--soft,#9e9e9e);border:2px solid var(--brand-primary);z-index:3;"></div><div style="position:absolute;left:180px;top:780px;width:320px;height:320px;background:var(--canvas-light-muted);border:2px solid var(--brand-primary);z-index:4;"></div>
+            <div style="position:absolute;left:500px;top:474px;z-index:10;"><span style="font-weight:700;font-size:46px;color:var(--brand-primary);">10%</span></div><div style="position:absolute;left:470px;top:546px;z-index:10;"><span style="font-weight:700;font-size:46px;color:var(--brand-primary);">10%</span></div><div style="position:absolute;left:420px;top:664px;z-index:10;"><span style="font-weight:700;font-size:46px;color:var(--brand-primary);">40%</span></div><div style="position:absolute;left:332px;top:910px;z-index:10;"><span style="font-weight:700;font-size:46px;color:var(--brand-primary);">40%</span></div>
+            <div style="position:absolute;left:56px;right:56px;bottom:64px;display:grid;grid-template-columns:1fr 1fr;gap:16px 30px;">
+              <div style="display:flex;align-items:center;gap:16px;"><span style="width:30px;height:30px;border-radius:6px;background:var(--canvas-light-muted);border:1.5px solid var(--brand-primary);"></span><span style="font-weight:500;font-size:26px;color:var(--brand-primary);">Building features</span></div><div style="display:flex;align-items:center;gap:16px;"><span style="width:30px;height:30px;border-radius:6px;background:var(--soft,#9e9e9e);border:1.5px solid var(--brand-primary);"></span><span style="font-weight:500;font-size:26px;color:var(--brand-primary);">Fixing bugs</span></div><div style="display:flex;align-items:center;gap:16px;"><span style="width:30px;height:30px;border-radius:6px;background:var(--canvas-light-line);border:1.5px solid var(--brand-primary);"></span><span style="font-weight:500;font-size:26px;color:var(--brand-primary);">Meetings</span></div><div style="display:flex;align-items:center;gap:16px;"><span style="width:30px;height:30px;border-radius:6px;background:var(--canvas-light-soft);border:1.5px solid var(--brand-primary);"></span><span style="font-weight:500;font-size:26px;color:var(--brand-primary);">Planning</span></div>
+            </div>
+          </div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1176, &quot;height&quot;: 780 },
+  &quot;primary&quot;:   { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;secondary&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;accent&quot;:    { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;tint&quot;:      { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: null, &quot;min&quot;: 3, &quot;max&quot;: 16, &quot;tsType&quot;: &quot;number&quot; },
+  &quot;font&quot;:      { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;&quot;, &quot;options&quot;: [&quot;&quot;, &quot;Inter&quot;, &quot;Plus Jakarta Sans&quot;, &quot;Space Grotesk&quot;, &quot;Sora&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  apply() {
+    const p = this.props || {}; const r = document.documentElement.style;
+    if (p.primary)   r.setProperty('--brand-primary', p.primary);
+    if (p.secondary) r.setProperty('--brand-secondary', p.secondary);
+    if (p.accent)    r.setProperty('--brand-accent', p.accent);
+    if (p.tint != null) r.setProperty('--brand-tint', p.tint + '%');
+    const font = p.font;
+    if (font) {
+      const id = 'tweak-font-' + font.replace(/\s+/g, '-');
+      if (!document.getElementById(id)) { const l=document.createElement('link'); l.id=id; l.rel='stylesheet'; l.href='https://fonts.googleapis.com/css2?family='+font.replace(/\s+/g,'+')+':wght@400;500;600;700;800&display=swap'; document.head.appendChild(l); }
+      r.setProperty('--brand-font', "'" + font + "', system-ui, sans-serif");
+      r.setProperty('--brand-font-display', "'" + font + "', system-ui, sans-serif");
+    }
+  }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

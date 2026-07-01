@@ -1,0 +1,21 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Derived tints" subtitle="Light-canvas soft / line + accent — auto-mixed from primary" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; }
+  .row { display:flex; gap:12px; padding:20px; }
+  .sw { flex:1; display:flex; flex-direction:column; gap:7px; }
+  .chip { height:64px; border-radius:9px; border:1px solid var(--rule,rgba(0,0,0,.07)); }
+  .nm { font-size:12px; font-weight:600; color:#18181b; }
+  .vr { font-size:10px; font-family:ui-monospace,monospace; color:var(--muted,#9a9a9a); }
+</style></head>
+<body>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:var(--canvas-light-soft)"></div><span class="nm">Light soft</span><span class="vr">--canvas-light-soft</span></div>
+  <div class="sw"><div class="chip" style="background:var(--canvas-light-line)"></div><span class="nm">Light line</span><span class="vr">--canvas-light-line</span></div>
+  <div class="sw"><div class="chip" style="background:var(--canvas-light-muted)"></div><span class="nm">Light muted</span><span class="vr">--canvas-light-muted</span></div>
+  <div class="sw"><div class="chip" style="background:var(--accent-soft)"></div><span class="nm">Accent soft</span><span class="vr">--accent-soft</span></div>
+  <div class="sw"><div class="chip" style="background:var(--accent)"></div><span class="nm">Accent</span><span class="vr">--accent</span></div>
+</div>
+</body></html>

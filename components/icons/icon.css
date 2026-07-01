@@ -1,0 +1,47 @@
+/* ============================================================
+   ICON CSS — MORE THAN SAID
+   Hand-drawn surface styling that pairs with icon-kit.js.
+   Load AFTER the design-system tokens (brand.css) so --brand-* resolve.
+   ============================================================ */
+
+:root{
+  --icon-ink: var(--brand-secondary, #36373C);   /* line / border colour     */
+  /* the three hand-drawn (asymmetric) corner radii */
+  --icon-sk1: 255px 15px 225px / 15px 225px 15px 255px;
+  --icon-sk2: 15px 225px 15px 255px / 255px 15px 225px;
+  --icon-sk3: 225px 15px 255px / 15px 255px 15px 225px;
+}
+
+/* ---- icon marks & illustrations (web components) ---- */
+icon-mark, icon-ill{ display:inline-block; width:48px; height:48px; vertical-align:middle; line-height:0; }
+icon-mark svg, icon-ill svg{ width:100%; height:100%; display:block; overflow:visible; }
+
+/* ---- sketch border: a rectangle that looks hand-drawn ---- */
+.icon-sketch{
+  border:3px solid var(--icon-ink);
+  border-radius:var(--icon-sk1);
+  box-shadow:5px 6px 0 0 var(--icon-ink);   /* solid offset shadow, no blur */
+  background:#fff;
+}
+.icon-sketch.sk2{ border-radius:var(--icon-sk2); }
+.icon-sketch.sk3{ border-radius:var(--icon-sk3); }
+.icon-sketch.flat{ box-shadow:none; }
+
+/* solid offset shadow on its own (zero blur) */
+.icon-shadow{ box-shadow:5px 6px 0 0 var(--icon-ink); }
+.icon-shadow.sm{ box-shadow:3px 4px 0 0 var(--icon-ink); }
+
+/* slight imperfect lean — nothing sits perfectly straight */
+.icon-tilt-l{ transform:rotate(-2deg); }
+.icon-tilt-r{ transform:rotate(1.5deg); }
+
+/* hand-written annotation voice (load Nanum Pen Script yourself) */
+.icon-hand{ font-family:'Nanum Pen Script', cursive; line-height:.92; }
+
+/* dot-grid paper backdrop for a slide/section */
+.icon-paper{ position:relative; }
+.icon-paper::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background-image:radial-gradient(var(--icon-ink) 1.4px, transparent 1.4px);
+  background-size:28px 28px; opacity:.05;
+}

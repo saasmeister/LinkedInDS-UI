@@ -1,0 +1,122 @@
+<!-- @dsCard group="Setup" viewport="1280x900" name="◆ LinkedIn Visual Designer — the app" subtitle="Full-bleed workspace; a small floating dock switches between Visual Board, Icon Library, Image Library and Settings. Chat stays the primary surface." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LinkedIn Visual Designer</title>
+
+<!-- core brand tokens (so the dock's active state matches the brand) -->
+<link rel="stylesheet" href="./styles.css" />
+<link rel="stylesheet" href="./overrides/brand.css" />
+<link rel="stylesheet" href="./overrides/extras.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* design-system neutrals (from the UI skillset) — the chrome is token-driven, never the brand surface */
+  :root {
+    --ui-surface:#FFFFFF; --ui-border:#E5E7EB; --ui-heading:#111827; --ui-body:#4B5563;
+    --ui-hover:#F3F4F6; --ui-shadow:0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+  }
+  html, body { margin:0; height:100%; }
+  body { height:100vh; overflow:hidden; font-family:var(--brand-font,'Inter',system-ui,-apple-system,sans-serif); color:var(--ui-heading); background:#eceef0; }
+  * { box-sizing:border-box; }
+
+  /* views reserve room for the dock so a view's own bottom bar (e.g. the visuals reel) never hides under it */
+  .views { position:absolute; left:0; right:0; top:0; bottom:80px; transition:bottom .16s ease; }
+  body.dock-collapsed .views { bottom:0 !important; }
+  .view { position:absolute; inset:0; border:none; width:100%; height:100%; display:none; background:#eceef0; }
+  .view.active { display:block; }
+
+  /* floating dock — bottom-center, light, tool-not-app */
+  .dock { position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:50;
+    display:flex; align-items:center; gap:2px; padding:6px;
+    background:var(--ui-surface); border:1px solid var(--ui-border); border-radius:16px;
+    box-shadow:var(--ui-shadow); }
+  .dseg { position:relative; }
+  .dbtn { position:relative; width:42px; height:42px; border:none; background:transparent; border-radius:11px;
+    display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ui-body);
+    transition:background .12s, color .12s; }
+  .dbtn svg { width:20px; height:20px; }
+  .dbtn:hover { background:var(--ui-hover); color:var(--ui-heading); }
+  .dbtn.active { background:var(--brand-primary,#0A66C2); color:#fff; }
+  .dbtn.disabled { color:#cbd0d6; cursor:default; }
+  .dbtn.disabled:hover { background:transparent; color:#cbd0d6; }
+  .dsep { width:1px; height:24px; background:var(--ui-border); margin:0 5px; }
+  /* collapse handle */
+  .dtoggle svg { transition:transform .16s; }
+  body.dock-collapsed .dtoggle svg { transform:rotate(180deg); }
+  body.dock-collapsed .dock .dbtn[data-view], body.dock-collapsed .dock .dbtn.disabled, body.dock-collapsed .dock .dsep { display:none; }
+  body.dock-collapsed .dock { padding:5px; bottom:14px; }
+  /* tooltip label */
+  .dbtn::after { content:attr(data-label); position:absolute; bottom:calc(100% + 9px); left:50%; transform:translateX(-50%) translateY(4px);
+    background:var(--ui-heading); color:#fff; font-size:12px; font-weight:600; white-space:nowrap;
+    padding:5px 9px; border-radius:7px; opacity:0; pointer-events:none; transition:opacity .12s, transform .12s; }
+  .dbtn:hover::after { opacity:1; transform:translateX(-50%) translateY(0); }
+  .dbtn.disabled::after { content:attr(data-label) " · soon"; }
+</style>
+</head>
+<body>
+
+<div class="views">
+  <iframe class="view active" id="view-board"    data-src="app/Visual Board.html" title="Visual Board"></iframe>
+  <iframe class="view"        id="view-icons"    data-src="components/icons/icon-editor.html" title="Icon Library"></iframe>
+  <iframe class="view"        id="view-settings" data-src="app/START HERE.html" title="Settings"></iframe>
+</div>
+
+<nav class="dock" aria-label="Workspace">
+  <button class="dbtn active" data-view="board" data-label="Visual Board" aria-label="Visual Board">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 15l5-5 4 4 3-3 6 6"></path></svg>
+  </button>
+  <button class="dbtn" data-view="icons" data-label="Icon Library" aria-label="Icon Library">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5.3L20 8l-4 3.9.9 5.6L12 15l-4.9 2.5L8 11.9 4 8l5.6-.7z"></path></svg>
+  </button>
+  <button class="dbtn disabled" data-label="Image Library" aria-label="Image Library (coming soon)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.6"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+  </button>
+  <span class="dsep"></span>
+  <button class="dbtn" data-view="settings" data-label="Settings" aria-label="Settings">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 19.3a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 2.7 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.6 1.6 0 0 0 7 2.7h.1A1.6 1.6 0 0 0 9 1.1V1a2 2 0 1 1 4 0v.1A1.6 1.6 0 0 0 15 2.7a1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V7a1.6 1.6 0 0 0 1.1 1.9h.1a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.1 1.1z"></path></svg>
+  </button>
+  <span class="dsep"></span>
+  <button class="dbtn dtoggle" id="dockToggle" data-label="Hide dock" aria-label="Collapse dock">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+</nav>
+
+<script>
+(function () {
+  var KEY = "li-vds-app-view";
+  var views = { board: "view-board", icons: "view-icons", settings: "view-settings" };
+  var btns = [].slice.call(document.querySelectorAll(".dbtn[data-view]"));
+  function show(view) {
+    if (!views[view]) view = "board";
+    Object.keys(views).forEach(function (k) {
+      var f = document.getElementById(views[k]); var on = k === view;
+      if (on && !f.getAttribute("src")) f.setAttribute("src", f.getAttribute("data-src"));
+      f.classList.toggle("active", on);
+    });
+    btns.forEach(function (b) { b.classList.toggle("active", b.getAttribute("data-view") === view); });
+    try { localStorage.setItem(KEY, view); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener("click", function () { show(b.getAttribute("data-view")); }); });
+  var start = "board"; try { start = localStorage.getItem(KEY) || "board"; } catch (e) {}
+  show(start);
+
+  // collapse / expand the dock for more canvas
+  var CKEY = "li-vds-dock-collapsed";
+  var toggle = document.getElementById("dockToggle");
+  var viewsEl = document.querySelector(".views");
+  function setCollapsed(on) {
+    document.body.classList.toggle("dock-collapsed", on);
+    viewsEl.style.bottom = on ? "0px" : "80px";   // inline = bulletproof (more canvas when collapsed)
+    toggle.setAttribute("data-label", on ? "Show dock" : "Hide dock");
+    toggle.setAttribute("aria-label", on ? "Expand dock" : "Collapse dock");
+    try { localStorage.setItem(CKEY, on ? "1" : "0"); } catch (e) {}
+  }
+  toggle.addEventListener("click", function () { setCollapsed(!document.body.classList.contains("dock-collapsed")); });
+  try { setCollapsed(localStorage.getItem(CKEY) === "1"); } catch (e) {}
+})();
+</script>
+</body>
+</html>

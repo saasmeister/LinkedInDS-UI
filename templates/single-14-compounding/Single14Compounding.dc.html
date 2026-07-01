@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Single 14 · compounding" description="Bold Visual Method archetype (Chart). Theme-agnostic; recolours from the brand layer (primary/secondary/accent/tint/font). One mechanism, flat canvas, focal = strongest tone." -->
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<script src="./ds-base.js"></script>
+<style>html,body{margin:0}body{background:#e6e6e6;display:flex;align-items:flex-start;justify-content:center;padding:48px;box-sizing:border-box;min-height:100vh}</style>
+</helmet>
+
+<div data-screen-label="Chart F2 · compounding" style="position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--canvas-section-bg);font-family:var(--font-body);">
+            <div style="position:absolute;top:48px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;"><span style="font-weight:600;font-size:22px;letter-spacing:0.04em;color:var(--canvas-section-muted);">Name</span><span style="font-weight:600;font-size:22px;letter-spacing:0.04em;color:var(--canvas-section-muted);">Category / function</span></div>
+            <div style="position:absolute;top:140px;left:56px;right:56px;"><div style="font-weight:700;font-size:84px;line-height:1.0;color:var(--canvas-section-fg);letter-spacing:-0.02em;">Consistency<br>compounds.</div></div>
+            <div style="position:absolute;left:230px;top:470px;"><div style="display:flex;align-items:center;gap:18px;margin-bottom:14px;"><span style="width:46px;height:8px;border-radius:4px;background:var(--canvas-section-fg);"></span><span style="font-weight:500;font-size:30px;color:var(--canvas-section-fg);">Ship &amp; post consistently</span></div><div style="display:flex;align-items:center;gap:18px;margin-bottom:14px;"><span style="width:46px;height:8px;border-radius:4px;background:var(--canvas-section-muted);"></span><span style="font-weight:500;font-size:30px;color:var(--canvas-section-fg);">Only when the pipeline’s dry</span></div><div style="display:flex;align-items:center;gap:18px;margin-bottom:14px;"><span style="width:46px;height:8px;border-radius:4px;background:var(--muted,#6e6e6e);"></span><span style="font-weight:500;font-size:30px;color:var(--canvas-section-fg);">Stay invisible</span></div></div>
+            <svg style="position:absolute;left:0;top:0;font-family:var(--font-body);" width="1080" height="1350" viewBox="0 0 1080 1350" fill="none">
+              <text x="180" y="430" font-size="30" font-weight="600" fill="var(--canvas-section-fg)">Visibility</text>
+              <line x1="200" y1="450" x2="200" y2="1180" style="stroke:var(--rule,#5a6b62)" stroke-width="2.5" stroke-dasharray="10 12"></line>
+              <line x1="200" y1="1180" x2="980" y2="1180" style="stroke:var(--rule,#5a6b62)" stroke-width="2.5" stroke-dasharray="10 12"></line>
+              <text x="980" y="1235" text-anchor="end" font-size="30" font-weight="600" fill="var(--canvas-section-fg)">Pipeline →</text>
+              <path d="M200 1180 L980 1130" fill="none" style="stroke:var(--rule,#6e6e6e)" stroke-width="6" stroke-linecap="round"></path>
+              <path d="M170 1180 Q 205 1120 240 1086 Q 275 1060 310 1086 Q 345 1060 380 1086 Q 415 1060 450 1086 Q 485 1060 520 1086 Q 555 1060 590 1086 Q 625 1060 660 1086 Q 695 1060 730 1086 Q 765 1060 800 1086 Q 835 1060 870 1086 Q 905 1060 940 1086 Q 956 1060 972 1086" fill="none" stroke="var(--canvas-section-muted)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M200 1180 C 560 1172, 800 1010, 980 500" fill="none" stroke="var(--canvas-section-fg)" stroke-width="6" stroke-linecap="round"></path>
+            </svg>
+          </div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1176, &quot;height&quot;: 780 },
+  &quot;primary&quot;:   { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;secondary&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;accent&quot;:    { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;tint&quot;:      { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: null, &quot;min&quot;: 3, &quot;max&quot;: 16, &quot;tsType&quot;: &quot;number&quot; },
+  &quot;font&quot;:      { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;&quot;, &quot;options&quot;: [&quot;&quot;, &quot;Inter&quot;, &quot;Plus Jakarta Sans&quot;, &quot;Space Grotesk&quot;, &quot;Sora&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  apply() {
+    const p = this.props || {}; const r = document.documentElement.style;
+    if (p.primary)   r.setProperty('--brand-primary', p.primary);
+    if (p.secondary) r.setProperty('--brand-secondary', p.secondary);
+    if (p.accent)    r.setProperty('--brand-accent', p.accent);
+    if (p.tint != null) r.setProperty('--brand-tint', p.tint + '%');
+    const font = p.font;
+    if (font) {
+      const id = 'tweak-font-' + font.replace(/\s+/g, '-');
+      if (!document.getElementById(id)) { const l=document.createElement('link'); l.id=id; l.rel='stylesheet'; l.href='https://fonts.googleapis.com/css2?family='+font.replace(/\s+/g,'+')+':wght@400;500;600;700;800&display=swap'; document.head.appendChild(l); }
+      r.setProperty('--brand-font', "'" + font + "', system-ui, sans-serif");
+      r.setProperty('--brand-font-display', "'" + font + "', system-ui, sans-serif");
+    }
+  }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

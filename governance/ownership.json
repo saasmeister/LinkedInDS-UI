@@ -1,0 +1,31 @@
+{
+  "$comment": "Ownership contract enforced by tools/check-branch.mjs. master-owned paths are pushed with updates and MUST NOT be edited in a branch. branch-owned paths are the client's and are NEVER overwritten by an update.",
+  "version": 1,
+  "branchOwned": [
+    "overrides/**",
+    "client/**"
+  ],
+  "ignored": [
+    "uploads/**",
+    "scraps/**",
+    "_ds_bundle.js",
+    "_ds_manifest.json",
+    "_adherence.oxlintrc.json",
+    "governance/master.lock",
+    "**/.thumbnail",
+    "**/support.js"
+  ],
+  "masterOwnedNote": "Everything not branchOwned and not ignored is master-owned and protected by the lockfile.",
+  "forbiddenInMaster": {
+    "$comment": "Patterns that indicate client-specific data leaking into master files. The validator flags these in master-owned files (excluding the allowed list).",
+    "allow": [
+      "tokens/brand.css",
+      "**/*.card.html",
+      "ui_kits/**",
+      "templates/**",
+      "components/**/*.jsx"
+    ],
+    "denyClientNames": [],
+    "$denyClientNamesNote": "Add a client's brand name / handle here on a branch-template to catch it being committed into master by mistake."
+  }
+}

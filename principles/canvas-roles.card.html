@@ -1,0 +1,28 @@
+<!-- @dsCard group="Principles" viewport="700x280" name="Canvas roles & palette logic" subtitle="Loud / Light / Section — and how many colours you bring" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:24px 28px; }
+  .roles { display:flex; gap:14px; margin-bottom:20px; }
+  .role { flex:1; border-radius:10px; padding:13px 15px; height:92px; box-sizing:border-box; display:flex; flex-direction:column; justify-content:space-between; }
+  .rn { font-size:13px; font-weight:700; letter-spacing:.04em; }
+  .rf { font-size:11.5px; line-height:1.35; }
+  .pal { display:flex; gap:26px; border-top:1px solid var(--rule,#eee); padding-top:16px; }
+  .p { flex:1; }
+  .pt { font-family:var(--font-display); font-weight:700; font-size:14px; margin:0 0 5px; }
+  .pb { font-size:13px; line-height:1.45; color:var(--muted,#5a5a5a); margin:0; }
+  .pb b { color:#18181b; }
+</style></head>
+<body>
+  <div class="roles">
+    <div class="role" style="background:var(--canvas-loud-bg);color:var(--canvas-loud-fg)"><span class="rn">LOUD</span><span class="rf" style="color:var(--canvas-loud-muted)">Cover, back cover, loud interstitials. Primary, full strength.</span></div>
+    <div class="role" style="background:var(--canvas-light-bg);color:var(--canvas-light-fg);border:1px solid var(--canvas-light-line)"><span class="rn">LIGHT</span><span class="rf" style="color:var(--canvas-light-muted)">Carousel steps + the default for single, quote, infographic. A very light tint of primary.</span></div>
+    <div class="role" style="background:var(--canvas-section-bg);color:var(--canvas-section-fg)"><span class="rn">SECTION</span><span class="rf" style="color:var(--canvas-section-muted)">Chapter markers inside a carousel. The secondary colour.</span></div>
+  </div>
+  <div class="pal">
+    <div class="p"><p class="pt">One colour</p><p class="pb">Primary at full strength = loud; a very light tint of it = light. Contrast is <b>full strength vs. light tint.</b></p></div>
+    <div class="p"><p class="pt">Two colours</p><p class="pb">Primary = cover/back; secondary = section slides; light tint = steps/base.</p></div>
+    <div class="p"><p class="pt">Never all-dark</p><p class="pb">The base is always light. Loud and section are <b>punctuation.</b></p></div>
+  </div>
+</body></html>

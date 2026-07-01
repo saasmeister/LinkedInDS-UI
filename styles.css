@@ -1,0 +1,19 @@
+/* LinkedIn Visual Design System — global entry point.
+   Consumers link THIS file. Order matters in two layers:
+
+   1. MASTER (pushed with updates) — fonts, brand defaults, canvas
+      roles, type, spacing, headline signature.
+   2. BRANCH (yours, never overwritten) — overrides/*.css, imported
+      LAST so your brand + extras win over the master defaults.        */
+
+/* ---- MASTER layer ---- */
+@import "./tokens/fonts.css";
+@import "./tokens/brand.css";
+@import "./tokens/canvas.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/headline.css";
+
+/* ---- BRANCH layer (yours — wins, never pushed over) ---- */
+@import "./overrides/brand.css";
+@import "./overrides/extras.css";

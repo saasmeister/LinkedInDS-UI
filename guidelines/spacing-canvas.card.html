@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" viewport="700x260" name="Canvas & safe field" subtitle="1080×1350 (4:5) · one roomy inner margin" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; padding:20px; display:flex; gap:26px; align-items:center; }
+  .frame { width:176px; height:220px; background:var(--canvas-light-bg); border:1px solid var(--canvas-light-line); border-radius:4px; position:relative; flex:none; }
+  .safe { position:absolute; inset:25px; border:1.5px dashed var(--canvas-light-muted); border-radius:2px; }
+  .band { position:absolute; inset:4px; border:1px solid color-mix(in srgb, var(--brand-primary) 35%, transparent); border-radius:3px; }
+  .tag { position:absolute; top:6px; left:8px; font-size:10px; font-weight:700; letter-spacing:.1em; color:var(--canvas-light-muted); }
+  .meta { font-size:13px; color:var(--muted,#444); line-height:1.7; }
+  .meta b { color:#18181b; }
+  .meta code { font-family:ui-monospace,monospace; font-size:12px; color:var(--muted,#8a8a8a); }
+</style></head>
+<body>
+  <div class="frame"><span class="tag">1080 × 1350</span><div class="band"></div><div class="safe"></div></div>
+  <div class="meta">
+    <div><b>Format</b> — 1080 × 1350 px, 4:5 portrait. Non-negotiable.</div>
+    <div><b>Safe band</b> — a hard <code>24px</code> edge on all sides, every visual.</div>
+    <div><b>Content margin</b> — <code>--margin: 72px</code> (band + gutter) · <code>--margin-tight: 48px</code></div>
+    <div>Nothing crosses the 24px band; content lives inside the margin.</div>
+  </div>
+</body></html>

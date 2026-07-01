@@ -1,0 +1,33 @@
+/* ============================================================
+   BRAND LAYER · OVERRIDES   ←  THIS FILE IS YOURS (the branch)
+   ------------------------------------------------------------
+   Ships UNCONFIGURED on purpose: the agent detects "no brand yet"
+   from this all-commented state and runs the brand check-in before
+   designing. Set your values here and the whole system re-derives;
+   master updates never touch this file.
+   ============================================================ */
+
+/* ---- LOAD YOUR FONT(S) FIRST ------------------------------------
+   ‼ @import must stay at the very TOP of this file (before :root) or
+   the browser ignores it. The system only loads Inter (the default).
+   To use the brand's font you MUST load it here AND name it in
+   --brand-font / --brand-font-display below. Naming a font without
+   loading it leaves EVERY visual on the fallback (looks like Inter).
+   Most brand fonts are on Google Fonts — replace the placeholders: */
+/* @import url('https://fonts.googleapis.com/css2?family=YOUR+BODY+FONT:wght@400;500;600;700;800&family=YOUR+DISPLAY+FONT:wght@400;700&display=swap'); */
+
+:root {
+  /* ---- Colours -------------------------------------------- */
+  /* --brand-primary:   #0A66C2; */   /* LOUD canvas (cover/back)        */
+  /* --brand-secondary: #16232B; */   /* SECTION canvas (chapter marker) */
+  /* --brand-accent:    #E7A33E; */   /* categorise / mark / highlight   */
+  /* --brand-tint: 7%; */             /* LIGHT-canvas tint strength      */
+
+  /* ---- Type — set BOTH; Inter is only the neutral default ----
+     Load the families in the @import above first, then name them here. */
+  /* --brand-font:         'YOUR BODY FONT', system-ui, sans-serif; */
+  /* --brand-font-display: 'YOUR DISPLAY FONT', system-ui, sans-serif; */
+
+  /* ---- Headline signature --------------------------------- */
+  /* --signature: underline; */       /* underline | block | bubble | plain */
+}

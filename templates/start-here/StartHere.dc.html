@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="① Start here — set up your brand" description="First stop for a new branch: launches the brand setup, then the Brief Studio. Open this first." -->
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<script src="./ds-base.js"></script>
+<style>
+  html,body{margin:0}
+  body{min-height:100vh;background:var(--canvas-light-bg,#f0f5fb);display:flex;align-items:center;justify-content:center;padding:48px;box-sizing:border-box;font-family:var(--brand-font,'Inter',system-ui,sans-serif)}
+</style>
+</helmet>
+
+<div style="max-width:760px;width:100%;background:#fff;border:1px solid var(--canvas-light-line,#dce6f2);border-radius:20px;padding:56px 56px 48px;box-shadow:0 12px 50px rgba(0,0,0,.08);box-sizing:border-box">
+
+  <div style="display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-primary,var(--brand-primary));margin-bottom:22px">
+    <span style="width:9px;height:9px;border-radius:50%;background:var(--brand-primary,var(--brand-primary))"></span>
+    LinkedIn Visual Design System
+  </div>
+
+  <h1 style="font-family:var(--brand-font-display,'Inter',sans-serif);font-weight:700;font-size:46px;line-height:1.08;letter-spacing:-.025em;margin:0 0 16px;color:#18181b">Welcome — let's set up your brand first.</h1>
+  <p style="font-size:18px;line-height:1.55;color:var(--muted,#5a5a5a);margin:0 0 36px;max-width:600px">Before you make any visuals, run the quick setup: your font, colours, logo, profile photo and spacing. It takes about two minutes and a live preview shows your style as you go. Everything you set is yours and survives every update.</p>
+
+  <div style="display:flex;gap:14px;flex-wrap:wrap">
+    <a href="../../app/START HERE.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--brand-primary,var(--brand-primary));color:#fff;font-weight:700;font-size:16px;padding:15px 28px;border-radius:12px;text-decoration:none">
+      Set up my brand →
+    </a>
+    <a href="../../app/Visual Board.html" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#3a3f45;font-weight:600;font-size:16px;padding:15px 26px;border-radius:12px;text-decoration:none;border:1px solid var(--rule,#d8dadd)">
+      Skip to making visuals
+    </a>
+  </div>
+
+  <div style="display:flex;gap:28px;margin-top:40px;padding-top:28px;border-top:1px solid var(--rule,#f0f1f3);flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="font-weight:700;font-size:14px;color:#18181b;margin-bottom:4px">1 · Set up</div>
+      <div style="font-size:13.5px;color:var(--muted,#8a9098);line-height:1.45">Brand, colours, spacing — writes your overrides.</div>
+    </div>
+    <div style="flex:1;min-width:180px">
+      <div style="font-weight:700;font-size:14px;color:#18181b;margin-bottom:4px">2 · Brief</div>
+      <div style="font-size:13.5px;color:var(--muted,#8a9098);line-height:1.45">Describe your post in the chat — the assistant asks the brief questions.</div>
+    </div>
+    <div style="flex:1;min-width:180px">
+      <div style="font-weight:700;font-size:14px;color:#18181b;margin-bottom:4px">3 · Make & export</div>
+      <div style="font-size:13.5px;color:var(--muted,#8a9098);line-height:1.45">Build, browse the library, export PNG / HTML.</div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

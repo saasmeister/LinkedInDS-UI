@@ -1,0 +1,29 @@
+<!-- @dsCard group="Principles" viewport="700x280" name="Delivery — always on a canvas" subtitle="Every visual sits on a stage · exportable as HTML or PNG · max 1080×1350" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:24px 28px; display:flex; gap:30px; align-items:center; }
+  .stage { width:200px; height:200px; flex:none; background:var(--soft,#e6e6e6); border-radius:10px; display:flex; align-items:center; justify-content:center; position:relative; }
+  .art { width:96px; height:120px; background:var(--canvas-light-bg); border:1px solid var(--canvas-light-line); border-radius:3px; box-shadow:0 6px 18px rgba(0,0,0,.16); position:relative; overflow:hidden; }
+  .art .h { position:absolute; left:9px; right:9px; top:13px; height:5px; border-radius:2px; background:var(--brand-primary); }
+  .art .d { position:absolute; left:50%; bottom:14px; transform:translateX(-50%); width:34px; height:34px; border-radius:50%; background:var(--canvas-light-soft); border:1.5px solid var(--brand-primary); }
+  .dim { position:absolute; bottom:8px; right:10px; font-size:10px; font-family:ui-monospace,monospace; color:var(--muted,#9a9a9a); }
+  .txt { flex:1; }
+  .row { display:flex; gap:11px; align-items:flex-start; margin-bottom:11px; }
+  .n { width:22px; height:22px; border-radius:6px; flex:none; background:var(--canvas-section-bg); color:var(--canvas-section-fg); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; font-size:12px; margin-top:1px; }
+  .t { font-size:14px; line-height:1.45; color:var(--muted,#5a5a5a); margin:0; }
+  .t b { color:#18181b; }
+  code { font-family:ui-monospace,monospace; font-size:12.5px; color:var(--brand-primary); }
+</style></head>
+<body>
+  <div class="stage">
+    <div class="art"><div class="h"></div><div class="d"></div></div>
+    <span class="dim">1080 × 1350</span>
+  </div>
+  <div class="txt">
+    <div class="row"><span class="n">1</span><p class="t"><b>Always on a canvas.</b> When communicating a visual to a client, it sits on a stage — a board the artboard is centred on, never a bare element.</p></div>
+    <div class="row"><span class="n">2</span><p class="t"><b>Exportable as proof.</b> The canvas downloads as standalone <b>HTML</b> or exports to <b>PNG</b> — a shareable record of the visual.</p></div>
+    <div class="row"><span class="n">3</span><p class="t"><b>Never larger than <code>1080 × 1350</code>.</b> A hard requirement of the canvas — 4:5 portrait, fixed. The artboard scales to fit any preview, but its true size is locked.</p></div>
+  </div>
+</body></html>

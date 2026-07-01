@@ -1,0 +1,55 @@
+/* ============================================================
+   CANVAS ROLES  ·  derived from the brand layer — rarely overridden
+   ------------------------------------------------------------
+   Three roles set the tone of a visual BEFORE any content lands.
+   They are expressed as a function, not a colour:
+
+     LOUD     primary at full strength      cover / back / loud interstitials
+     LIGHT    a very light tint of primary  steps, singles, quotes, infographics (default)
+     SECTION  the secondary colour          chapter markers inside a carousel
+
+   Palette logic:
+   · One brand colour  → LOUD = primary, LIGHT = light tint, SECTION falls back to a
+                          darkened primary (the system proposes a secondary).
+   · Two brand colours → primary = LOUD, secondary = SECTION, light tint = LIGHT.
+   Never a fully dark/loud series: the base is always LIGHT; loud and section are punctuation.
+   ============================================================ */
+
+:root {
+  /* ---- LOUD : cover, back cover, loud interstitials -------- */
+  --canvas-loud-bg:    var(--brand-primary);
+  --canvas-loud-fg:    #FFFFFF;
+  --canvas-loud-muted: color-mix(in srgb, #FFFFFF 62%, var(--brand-primary));
+  --canvas-loud-line:  color-mix(in srgb, #FFFFFF 28%, transparent);
+  --canvas-loud-soft:  color-mix(in srgb, #FFFFFF 16%, var(--brand-primary));
+
+  /* ---- LIGHT : steps + default for single / quote / info --- */
+  --canvas-light-bg:    color-mix(in srgb, var(--brand-primary) var(--brand-tint), #FFFFFF);
+  --canvas-light-fg:    #18181B;
+  --canvas-light-muted: color-mix(in srgb, var(--brand-primary) 38%, #6B6B6B);
+  --canvas-light-soft:  color-mix(in srgb, var(--brand-primary) 12%, #FFFFFF);
+  --canvas-light-line:  color-mix(in srgb, var(--brand-primary) 16%, #DFDFDF);
+
+  /* ---- SECTION : chapter markers (secondary / deep) -------- *
+     If the user gives no secondary, --brand-secondary in brand.css
+     should be set to a deep tint of primary; this keeps SECTION a
+     true role even in a one-colour palette.                      */
+  --canvas-section-bg:    var(--brand-secondary);
+  --canvas-section-fg:    color-mix(in srgb, #FFFFFF 92%, var(--brand-secondary));
+  --canvas-section-muted: color-mix(in srgb, #FFFFFF 48%, var(--brand-secondary));
+  --canvas-section-line:  color-mix(in srgb, #FFFFFF 18%, transparent);
+  --canvas-section-soft:  color-mix(in srgb, #FFFFFF 12%, var(--brand-secondary));
+
+  /* ---- Accent (categorising / marking) -------------------- */
+  --accent:        var(--brand-accent);
+  --accent-soft:   color-mix(in srgb, var(--brand-accent) 16%, #FFFFFF);
+  --accent-fg:     #18181B;
+
+  /* ---- Scope-agnostic content neutrals -------------------- *
+     Artboard content uses var(--muted/--soft/--rule); every .art re-aliases
+     these to its own canvas scope (loud/light/section). These LIGHT defaults
+     make them resolve everywhere, so a content neutral is never raw grey. */
+  --muted: var(--canvas-light-muted);
+  --soft:  var(--canvas-light-soft);
+  --rule:  var(--canvas-light-line);
+}

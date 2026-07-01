@@ -1,0 +1,34 @@
+/* ============================================================
+   BRAND LAYER · DEFAULTS  (master-owned — pushed with updates)
+   ------------------------------------------------------------
+   These are the system's neutral DEFAULTS. A client (branch) does
+   NOT edit this file — they override these same variables in
+   `overrides/brand.css`, which is imported last and wins. That way
+   master can ship new defaults without ever clobbering a client's
+   colours and fonts.
+
+   The whole system is colour- and font-agnostic. A token names a
+   ROLE ("section background = the secondary colour"), never a
+   concrete value ("section = navy"). Override the brand layer and
+   every canvas role, heading and chrome re-derives automatically.
+   ============================================================ */
+
+:root {
+  /* ---- Colours (override these) ---------------------------- */
+  --brand-primary:   #0A66C2;   /* primary at full strength = LOUD canvas      */
+  --brand-secondary: #16232B;   /* deep/dark colour          = SECTION canvas  */
+  --brand-accent:    #E7A33E;   /* optional — categorise / mark / highlight    */
+
+  /* Tint strength used to derive the LIGHT canvas from primary.
+     Lower = paler. 6–10% is the sweet spot for "hele lichte tint". */
+  --brand-tint: 7%;
+
+  /* ---- Type (override these) ------------------------------- */
+  --brand-font:         'Inter', system-ui, -apple-system, sans-serif; /* body + UI     */
+  --brand-font-display: 'Inter', system-ui, -apple-system, sans-serif; /* headlines     */
+
+  /* ---- Headline signature ---------------------------------- *
+     The fixed, recognisable treatment of the headline. Swap the
+     value to restyle every headline at once (see headline.css).  */
+  --signature: underline;   /* @kind other */ /* underline | block | bubble | plain */
+}

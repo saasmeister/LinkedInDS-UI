@@ -1,0 +1,43 @@
+/* ============================================================
+   SPACING & FORMAT  ·  the fixed geometry of a LinkedIn visual
+   ------------------------------------------------------------
+   One canvas, one safe field. Everything lives inside the margin.
+
+   SAFE BAND: every visual carries a hard 24px band around the
+   whole frame — the absolute edge nothing crosses, applied to
+   ALL types. The content margin is that band + a content gutter,
+   which is why content now gets a little more room than before.
+   ============================================================ */
+
+:root {
+  /* ---- Canvas (4:5 portrait, non-negotiable) -------------- */
+  --canvas-w: 1080px;
+  --canvas-h: 1350px;
+
+  /* ---- Safe band (the hard outer edge, every visual) ------ */
+  --safe-band: 24px;      /* nothing crosses this — applied to all types  */
+
+  /* ---- Safe margin = band + content gutter ---------------- */
+  --margin:       72px;   /* default content inset (24 band + 48 gutter)  */
+  --margin-tight: 48px;   /* denser content inset (24 band + 24 gutter)   */
+
+  /* ---- Spacing scale (artboard px) ------------------------ */
+  --space-1:  8px;
+  --space-2:  14px;
+  --space-3:  20px;
+  --space-4:  28px;
+  --space-5:  40px;
+  --space-6:  56px;
+  --space-7:  72px;
+  --space-8:  96px;
+
+  /* ---- Radii ---------------------------------------------- */
+  --radius-card: 16px;   /* infographic cards                            */
+  --radius-pill: 999px;  /* chips, tags                                  */
+  --radius-cta:  18px;    /* CTA blocks                                   */
+
+  /* ---- Borders & elevation -------------------------------- */
+  --line:        1.5px;
+  --line-strong: 2.5px;   /* the one emphasised card per infographic      */
+  --shadow-card: 0 1px 3px rgba(0,0,0,.08);
+}

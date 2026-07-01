@@ -1,0 +1,17 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Radii & elevation" subtitle="Card · CTA · pill radii + card shadow / emphasis border" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; padding:22px; display:flex; gap:20px; align-items:center; }
+  .box { width:96px; height:96px; background:#fff; display:flex; align-items:center; justify-content:center; font-size:11px; font-family:ui-monospace,monospace; color:var(--muted,#8a8a8a); text-align:center; }
+  .cap { font-size:11px; color:var(--muted,#8a8a8a); margin-top:8px; text-align:center; font-family:ui-monospace,monospace; }
+  .col { display:flex; flex-direction:column; align-items:center; }
+</style></head>
+<body>
+  <div class="col"><div class="box" style="border-radius:var(--radius-card);border:1.5px solid var(--canvas-light-line)">16</div><span class="cap">card</span></div>
+  <div class="col"><div class="box" style="border-radius:var(--radius-cta);border:1.5px solid var(--canvas-light-line)">18</div><span class="cap">cta</span></div>
+  <div class="col"><div class="box" style="border-radius:var(--radius-pill);border:1.5px solid var(--canvas-light-line)">pill</div><span class="cap">999</span></div>
+  <div class="col"><div class="box" style="border-radius:var(--radius-card);box-shadow:var(--shadow-card)">shadow</div><span class="cap">--shadow-card</span></div>
+  <div class="col"><div class="box" style="border-radius:var(--radius-card);border:2.5px solid var(--canvas-light-muted)">emphasis</div><span class="cap">--line-strong</span></div>
+</body></html>

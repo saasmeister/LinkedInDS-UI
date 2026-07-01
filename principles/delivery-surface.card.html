@@ -1,0 +1,36 @@
+<!-- @dsCard group="Principles" viewport="700x300" name="Delivery surface & the learn loop" subtitle="Browse the reel · export PNG/HTML · approve → the system learns" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:24px 28px; }
+  .top { display:flex; gap:22px; align-items:center; margin-bottom:18px; }
+  .stage { width:118px; flex:none; }
+  .hero { width:118px; height:148px; border-radius:5px; background:var(--canvas-light-bg); border:1px solid var(--canvas-light-line); position:relative; box-shadow:0 4px 14px rgba(0,0,0,.12); }
+  .hb { position:absolute; left:12px; right:12px; top:18px; height:6px; border-radius:3px; background:var(--brand-primary); }
+  .reel { display:flex; gap:5px; margin-top:7px; }
+  .rt { width:26px; height:33px; border-radius:3px; background:var(--canvas-light-soft); border:1px solid var(--canvas-light-line); }
+  .rt.on { box-shadow:0 0 0 2px var(--brand-primary); }
+  .menu { flex:1; border:1px solid var(--rule,#ececec); border-radius:12px; padding:8px; max-width:300px; }
+  .mi { display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; }
+  .mi b { font-weight:600; }
+  .mi.acc { color:var(--brand-primary); }
+  .ico { width:20px; height:20px; display:flex; align-items:center; justify-content:center; color:var(--muted,#6b7280); }
+  .mi.acc .ico { color:var(--brand-primary); }
+  .foot { font-size:13px; line-height:1.5; color:var(--muted,#5a5a5a); margin:6px 0 0; border-top:1px solid var(--rule,#f0f0f0); padding-top:13px; }
+  .foot b { color:#18181b; }
+</style></head>
+<body>
+  <div class="top">
+    <div class="stage">
+      <div class="hero"><div class="hb"></div></div>
+      <div class="reel"><div class="rt on"></div><div class="rt"></div><div class="rt"></div><div class="rt"></div></div>
+    </div>
+    <div class="menu">
+      <div class="mi"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></span><b>Download as PNG</b></div>
+      <div class="mi"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></span><b>Download as HTML</b></div>
+      <div class="mi acc"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span><b>Add to design system</b></div>
+    </div>
+  </div>
+  <p class="foot">Every visual is delivered on a <b>canvas you can scroll through like a reel</b> — click one to bring it to the hero, then export it as a <b>PNG</b> or a standalone <b>HTML</b> file. When a client approves a visual, <b>Add to design system</b> records it: approved variants are the queue the system <b>learns</b> from, and recurring patterns get promoted into real components (e.g. the browser-window “catalog of homepages” became the <b>BrowserMock</b> component).</p>
+</body></html>

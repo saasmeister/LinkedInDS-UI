@@ -1,0 +1,64 @@
+<!-- @dsCard group="Components" viewport="700x560" name="Feed preview" subtitle="See a visual inside the real LinkedIn feed — single & carousel" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin:0; background:#F4F2EE; font-family:system-ui,sans-serif; }
+  .wrap { padding:24px; display:flex; gap:24px; flex-wrap:wrap; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="wrap" id="root"></div>
+<script src="../../_ds_bundle.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" data-presets="react">
+  const { FeedPost, Canvas, Chrome, Eyebrow, Headline, Mark, Subhead, Stat } = (window.__dsNS||(window.__dsNS=(function(){var ks;try{ks=Object.keys(window)}catch(e){return{}}for(var i=0;i<ks.length;i++){try{var v=window[ks[i]];if(v&&typeof v==="object"&&v.Headline&&v.Canvas&&v.Stat)return v}catch(e){}}return{}})()));
+
+  // a true-size visual scaled into a full-bleed 4:5 box
+  function Fit({ children, w = 432 }) {
+    const s = w / 1080;
+    return (
+      <div style={{ width: w, height: w * 1.25, overflow: "hidden" }}>
+        <div style={{ width: 1080, height: 1350, transform: `scale(${s})`, transformOrigin: "top left" }}>{children}</div>
+      </div>
+    );
+  }
+
+  const single = (
+    <Canvas role="light">
+      <Chrome name="Your name" category="Outreach" position="top" />
+      <div style={{ position: "absolute", left: "var(--margin)", right: "var(--margin)", top: 0, bottom: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <Eyebrow>The re-hook</Eyebrow>
+        <Headline size="lg" style={{ marginTop: 18 }}>Most outreach fails on the <Mark>first line</Mark></Headline>
+        <Subhead style={{ marginTop: 24 }}>The visual catches scrollers the caption never reaches.</Subhead>
+      </div>
+    </Canvas>
+  );
+
+  const pages = [
+    <Canvas role="loud"><div style={{position:"absolute",left:"var(--margin)",right:"var(--margin)",top:150}}><Eyebrow>A carousel about</Eyebrow><Headline size="lg" style={{marginTop:16}}>How I write cold DMs that get replies</Headline></div><Chrome name="Your name" category="Outreach" position="bottom" swipe /></Canvas>,
+    <Canvas role="section"><Chrome name="Your name" category="Outreach" position="top" /><div style={{position:"absolute",left:"var(--margin)",right:"var(--margin)",top:0,bottom:0,display:"flex",flexDirection:"column",justifyContent:"center"}}><Eyebrow color="var(--accent)">The result</Eyebrow><Stat value="3.4×" caption="more replies" align="left" size="xl" style={{marginTop:10}} /></div></Canvas>,
+  ];
+
+  function Demo() {
+    return (
+      <React.Fragment>
+        <FeedPost mode="single" width={460}
+          author={{ name: "Thomas Varekamp", headline: "AI voor hogere marges in handelsbedrijven", link: "Visit my website", time: "21h" }}
+          text="Update: 1 maand na lancering nieuwe dienst. Dit is wat er gebeurde:"
+          media={<Fit w={460}>{single}</Fit>} likes={23} comments={4} reposts={1} />
+        <FeedPost mode="carousel" width={460} docTitle="How I write cold DMs that get replies"
+          author={{ name: "Heena Khuman", headline: "LinkedIn Strategist for Business Owners", time: "1d" }}
+          text="I think I'm quitting LinkedIn. (kidding — here's the system)"
+          pages={pages.map((p, i) => <Fit key={i} w={404}>{p}</Fit>)} likes={47} comments={18} reposts={1} />
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body>
+</html>

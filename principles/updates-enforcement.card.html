@@ -1,0 +1,38 @@
+<!-- @dsCard group="Principles" viewport="700x320" name="Updates & enforcement" subtitle="Daily update check · confirm before apply · push gate that blocks bad commits" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:22px 26px; }
+  .lead { font-size:13px; color:var(--muted,#8a8a8a); margin:0 0 16px; }
+  .lead b { color:#18181b; }
+  .cols { display:flex; gap:18px; }
+  .panel { flex:1; border:1px solid var(--rule,#ececec); border-radius:12px; padding:14px 15px; }
+  .pt { font-family:var(--font-display); font-weight:700; font-size:13.5px; margin:0 0 11px; letter-spacing:-.01em; display:flex; align-items:center; gap:7px; }
+  .ver { display:flex; align-items:center; gap:9px; margin-bottom:11px; }
+  .vb { font-family:var(--font-display); font-weight:700; font-size:18px; }
+  .badge { font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:999px; background:#eef4fc; color:#1d4e85; }
+  .row { display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--muted,#5a5a5a); padding:4px 0; }
+  .dot { width:8px; height:8px; border-radius:50%; flex:none; }
+  .cmd { font-family:ui-monospace,monospace; font-size:11px; background:#0f1419; color:#cfe3ff; border-radius:8px; padding:9px 11px; margin-top:10px; line-height:1.5; }
+  .x { color:#ff8a8a; }
+</style></head>
+<body>
+  <p class="lead">A branch <b>checks master daily</b> and applies updates only <b>after you confirm</b>. A push <b>gate blocks</b> any commit that would touch master files from a branch — so client work can never break the line, and updates always apply cleanly.</p>
+  <div class="cols">
+    <div class="panel">
+      <p class="pt">Daily update check</p>
+      <div class="ver"><span class="vb" style="color:#1f2328">0.9.0</span><span style="color:var(--muted,#c0c4c9)">→</span><span class="vb" style="color:var(--brand-primary)">1.0.0</span><span class="badge">Update available</span></div>
+      <div class="row" style="color:#1d4e85;font-weight:600">+ New templates · components in this release</div>
+      <div class="row">Auto-checks every 24h · "Apply" asks first</div>
+      <div class="row" style="color:#1f6b43">✓ overrides/ & client/ stay untouched</div>
+    </div>
+    <div class="panel">
+      <p class="pt">Push gate (enforced)</p>
+      <div class="row"><span class="dot" style="background:#1f6b43"></span>Edit a component / template → <b style="margin-left:3px">pushed by master</b></div>
+      <div class="row"><span class="x">✗</span>Branch edits a master file → <b style="margin-left:3px;color:#a12020">push blocked</b></div>
+      <div class="row"><span class="dot" style="background:#b45309"></span>Your brand & learned items → in overrides/ + client/</div>
+      <div class="cmd">$ node tools/check-branch.mjs<br>✓ master files untouched — safe to push</div>
+    </div>
+  </div>
+</body></html>

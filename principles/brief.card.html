@@ -1,0 +1,41 @@
+<!-- @dsCard group="Principles" viewport="700x320" name="Design brief — intake" subtitle="Run this before building. Never skip a required field." -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:24px 28px; }
+  .lead { font-size:13px; color:var(--muted,#8a8a8a); margin:0 0 18px; }
+  .lead b { color:#18181b; }
+  .cols { display:flex; gap:26px; }
+  .col { flex:1; }
+  .ct { font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--brand-primary); margin:0 0 11px; }
+  .row { display:flex; gap:10px; align-items:flex-start; margin-bottom:9px; }
+  .req { width:18px; height:18px; border-radius:5px; flex:none; background:var(--canvas-section-bg); color:var(--canvas-section-fg); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; margin-top:1px; }
+  .opt { width:18px; height:18px; border-radius:5px; flex:none; border:1.5px solid var(--canvas-light-line); margin-top:1px; }
+  .lbl { font-size:13.5px; line-height:1.4; }
+  .lbl b { font-weight:600; }
+  .lbl span { color:var(--muted,#8a8a8a); }
+  .foot { margin-top:16px; padding-top:13px; border-top:1px solid var(--rule,#f0f0f0); font-size:13px; color:var(--muted,#5a5a5a); }
+  .foot b { color:#18181b; }
+</style></head>
+<body>
+  <p class="lead">Never build until the brief is filled. <b>Post-first, type-explicit, brand-explicit.</b> <span style="color:var(--muted,#b5b5b5)">■ required · □ ask every time</span></p>
+  <div class="cols">
+    <div class="col">
+      <p class="ct">Required</p>
+      <div class="row"><span class="req">1</span><span class="lbl"><b>The post</b> <span>— full text (or the idea)</span></span></div>
+      <div class="row"><span class="req">2</span><span class="lbl"><b>Visual type</b> <span>— single / carousel / infographic / quote · ask, don’t guess</span></span></div>
+      <div class="row"><span class="req">3</span><span class="lbl"><b>Identity bar</b> <span>— name + claimed category/function</span></span></div>
+      <div class="row"><span class="req">4</span><span class="lbl"><b>Brand layer</b> <span>— primary colour + font</span></span></div>
+    </div>
+    <div class="col">
+      <p class="ct">Ask every time</p>
+      <div class="row"><span class="opt"></span><span class="lbl"><b>Second hook</b> <span>— write it, or derive from post? (differs from the post hook)</span></span></div>
+      <div class="row"><span class="opt"></span><span class="lbl"><b>Subheading</b> <span>— include one? what does it add?</span></span></div>
+      <div class="row"><span class="opt"></span><span class="lbl"><b>Signature</b> <span>— underline / block / bubble · once per series</span></span></div>
+      <div class="row"><span class="opt"></span><span class="lbl"><b>Secondary colour</b> <span>— one colour? offer to derive it for section slides</span></span></div>
+      <div class="row"><span class="opt"></span><span class="lbl"><b>Type-specific</b> <span>— steps & CTA · the one visual · results stats · the exact quote</span></span></div>
+    </div>
+  </div>
+  <p class="foot"><b>Then:</b> a pushback pass — does the post fit this type? does it hold the series together? Build only when the approach is clear. <b>(full spec → BRIEF.md)</b></p>
+</body></html>

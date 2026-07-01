@@ -1,0 +1,49 @@
+<!-- @dsCard group="Principles" viewport="700x360" name="Anti-Slop Gate" subtitle="The QA pass that keeps a visual from looking AI-made — runs before every delivery" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:26px 30px; }
+  .lead { font-size:13px; color:var(--muted,#8a8a8a); margin:0 0 16px; }
+  .lead b { color:#18181b; }
+  .cols { display:flex; gap:22px; }
+  .col { flex:1; }
+  .ct { font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:.02em; text-transform:uppercase; margin:0 0 9px; display:flex; align-items:center; gap:7px; }
+  .ct .dot { width:9px; height:9px; border-radius:50%; }
+  .ban .dot { background:#c0392b; }
+  .ok .dot { background:var(--brand-primary); }
+  ul { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px; }
+  li { font-size:12.5px; line-height:1.4; color:var(--muted,#5a5a5a); padding-left:15px; position:relative; }
+  li::before { content:""; position:absolute; left:0; top:6px; width:6px; height:6px; border-radius:1px; }
+  .ban li::before { background:#c0392b; }
+  .ok li::before { background:var(--brand-primary); }
+  li b { color:#18181b; font-weight:600; }
+  .foot { margin-top:17px; font-size:12px; color:var(--muted,#8a8a8a); padding-top:13px; border-top:1px solid var(--rule,#ececec); }
+  .foot b { color:var(--brand-primary); }
+</style></head>
+<body>
+  <p class="lead">The test: <b>if someone could say "AI made that" without doubt, it failed.</b> Every variant runs this pass before it's shown. A deliberately invoked style pack is <b>voice, not slop</b> — its signature isn't flagged; the never-exempt checks still hold.</p>
+  <div class="cols">
+    <div class="col ban">
+      <p class="ct"><span class="dot"></span>Refuse</p>
+      <ul>
+        <li><b>Hero-metric template</b> — big number + tiny label + 3 stats + gradient</li>
+        <li><b>Eyebrow on every variant</b> by reflex; 01/02/03 as decoration</li>
+        <li><b>Side-stripe cards</b> & identical/nested card grids</li>
+        <li><b>Gradient text</b>, purple→blue AI-gradient, default glassmorphism</li>
+        <li><b>Three tints of one layout</b> across A/B/C</li>
+      </ul>
+    </div>
+    <div class="col ok">
+      <p class="ct"><span class="dot"></span>Never exempt</p>
+      <ul>
+        <li><b>Readable contrast</b> — no grey-on-tint, no grey-on-colour</li>
+        <li><b>No default-font headline</b> (Inter/system with no intent)</li>
+        <li><b>Real type hierarchy</b>; nothing below ~24px</li>
+        <li><b>A/B/C genuinely differ</b> — vary the mechanism, not the tint</li>
+        <li>Holds <b>even inside a style pack</b></li>
+      </ul>
+    </div>
+  </div>
+  <p class="foot">Adapted from the <b>Impeccable</b> anti-pattern system · enforced as <b>GATE 8</b> · deterministic detector + critique flow vendored under <b>tools/anti-slop/</b>.</p>
+</body></html>

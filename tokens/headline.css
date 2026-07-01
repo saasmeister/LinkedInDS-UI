@@ -1,0 +1,56 @@
+/* ============================================================
+   HEADLINE SIGNATURE  ·  one fixed, recognisable treatment
+   ------------------------------------------------------------
+   The headline is the hero of every visual and gets the SAME
+   recognisable treatment across a whole series — that consistency
+   is the brand signal. Pick the shape once via --signature
+   (tokens/brand.css); apply .headline to the headline element.
+
+   Helper classes the components use:
+     .headline            base headline type
+     .headline--cover     cover/back size
+     .headline[data-sig]  resolves to the signature shape
+   The signature reads --sig-color (defaults to the canvas accent line)
+   so it inverts correctly on loud / section canvases.
+   ============================================================ */
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fz-head-md);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tr-tight);
+  margin: 0;
+  text-wrap: balance;
+  --sig-color: var(--brand-primary);
+}
+.headline--lg { font-size: var(--fz-head-lg); }
+.headline--sm { font-size: var(--fz-head-sm); }
+
+/* --- underline : a thick rule under the headline ----------- */
+.sig-underline {
+  display: inline;
+  background-image: linear-gradient(var(--sig-color), var(--sig-color));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 6px;
+  padding-bottom: 4px;
+}
+
+/* --- block : a solid highlight behind the words ------------ */
+.sig-block {
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background: var(--sig-color);
+  color: var(--canvas-loud-fg);
+  padding: 0.04em 0.22em;
+}
+
+/* --- bubble : a rounded outlined badge --------------------- */
+.sig-bubble {
+  display: inline-block;
+  border: var(--line-strong) solid var(--sig-color);
+  border-radius: var(--radius-pill);
+  padding: 0.12em 0.5em;
+}

@@ -1,0 +1,21 @@
+<!-- @dsCard group="Principles" viewport="700x180" name="Chrome & the swipe rule" subtitle="Identity bar top or bottom — swipe arrow on carousels only" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:22px 28px; display:flex; gap:30px; align-items:center; }
+  .demo { width:230px; flex:none; }
+  .bar { display:flex; justify-content:space-between; align-items:center; background:var(--canvas-light-bg); border:1px solid var(--canvas-light-line); border-radius:8px; padding:13px 16px; }
+  .nm { font-weight:600; font-size:13px; letter-spacing:.04em; }
+  .ct { font-weight:600; font-size:13px; letter-spacing:.04em; color:var(--canvas-light-muted); }
+  .ar { width:28px; height:28px; border-radius:50%; border:1.5px solid var(--canvas-light-muted); display:flex; align-items:center; justify-content:center; color:var(--canvas-light-muted); }
+  .txt { font-size:14px; line-height:1.55; color:var(--muted,#5a5a5a); margin:0; }
+  .txt b { color:#18181b; }
+</style></head>
+<body>
+  <div class="demo">
+    <div class="bar"><span class="nm">Your name</span><span class="ct">Category</span></div>
+    <div class="bar" style="margin-top:10px"><span class="nm">Your name</span><div style="display:flex;align-items:center;gap:10px"><span class="ct">Category</span><span class="ar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></span></div></div>
+  </div>
+  <p class="txt"><b>Name left, claimed category / function right.</b> The identity bar may sit top <em>or</em> bottom — ship both as variants and choose by how the visual lands.<br><br>The <b>swipe arrow (→) belongs to carousels only</b> — it signals “there’s more.” Leave it off single, quote and infographic.</p>
+</body></html>

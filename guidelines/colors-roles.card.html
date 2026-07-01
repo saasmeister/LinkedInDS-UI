@@ -1,0 +1,28 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Canvas roles" subtitle="Loud · Light · Section — tone set before any content" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; }
+  .row { display:flex; gap:14px; padding:20px; }
+  .card { flex:1; border-radius:12px; padding:16px; height:108px; box-sizing:border-box; display:flex; flex-direction:column; justify-content:space-between; box-shadow:var(--shadow-card); }
+  .role { font-size:13px; font-weight:700; letter-spacing:.04em; }
+  .fn { font-size:11px; line-height:1.4; }
+  .dot { width:22px; height:22px; border-radius:6px; }
+</style></head>
+<body>
+<div class="row">
+  <div class="card" style="background:var(--canvas-loud-bg);color:var(--canvas-loud-fg)">
+    <div class="role">LOUD</div>
+    <div class="fn" style="color:var(--canvas-loud-muted)">Cover · back cover · loud interstitials. Primary, full strength.</div>
+  </div>
+  <div class="card" style="background:var(--canvas-light-bg);color:var(--canvas-light-fg);border:1px solid var(--canvas-light-line)">
+    <div class="role">LIGHT</div>
+    <div class="fn" style="color:var(--canvas-light-muted)">Steps + default for single / quote / infographic. Very light tint of primary.</div>
+  </div>
+  <div class="card" style="background:var(--canvas-section-bg);color:var(--canvas-section-fg)">
+    <div class="role">SECTION</div>
+    <div class="fn" style="color:var(--canvas-section-muted)">Chapter markers inside a carousel. The secondary colour.</div>
+  </div>
+</div>
+</body></html>

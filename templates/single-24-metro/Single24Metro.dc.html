@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Single 24 · metro" description="Bold Visual Method archetype (Bold). Theme-agnostic; recolours from the brand layer (primary/secondary/accent/tint/font). One mechanism, flat canvas, focal = strongest tone." -->
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<script src="./ds-base.js"></script>
+<style>html,body{margin:0}body{background:#e6e6e6;display:flex;align-items:flex-start;justify-content:center;padding:48px;box-sizing:border-box;min-height:100vh}</style>
+</helmet>
+
+<div data-screen-label="Bold H5 · metro" style="position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--canvas-light-bg);font-family:var(--font-body);">
+            <div style="position:absolute;inset:56px;border:1.5px dashed var(--canvas-light-line);pointer-events:none;"></div>
+            <div style="position:absolute;top:48px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;"><span style="font-weight:600;font-size:22px;letter-spacing:0.04em;color:color-mix(in srgb, var(--canvas-light-muted) 72%, var(--canvas-light-bg));">Name</span><span style="font-weight:600;font-size:22px;letter-spacing:0.04em;color:color-mix(in srgb, var(--canvas-light-muted) 72%, var(--canvas-light-bg));">Category / function</span></div>
+            <div style="position:absolute;top:150px;left:56px;right:56px;"><div style="font-weight:700;font-size:64px;line-height:1.0;color:var(--brand-primary);letter-spacing:-0.02em;">The road to PMF</div></div>
+            <svg style="position:absolute;left:0;top:0;font-family:var(--font-body);" width="1080" height="1350">
+              <polyline points="200,470 200,640 360,800 360,980 560,1180" fill="none" stroke="var(--brand-primary)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              <polyline points="200,470 760,470 880,590 880,860" fill="none" stroke="color-mix(in srgb, var(--brand-primary) 50%, var(--canvas-light-bg))" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              <circle cx="200" cy="470" r="18" fill="var(--canvas-light-bg)" stroke="var(--brand-primary)" stroke-width="8"></circle><circle cx="200" cy="640" r="18" fill="var(--canvas-light-bg)" stroke="var(--brand-primary)" stroke-width="8"></circle><circle cx="360" cy="800" r="18" fill="var(--canvas-light-bg)" stroke="var(--brand-primary)" stroke-width="8"></circle><circle cx="360" cy="980" r="18" fill="var(--canvas-light-bg)" stroke="var(--brand-primary)" stroke-width="8"></circle><circle cx="560" cy="1180" r="18" fill="var(--canvas-light-bg)" stroke="var(--brand-primary)" stroke-width="8"></circle>
+              <circle cx="760" cy="470" r="18" fill="var(--canvas-light-bg)" stroke="color-mix(in srgb, var(--brand-primary) 50%, var(--canvas-light-bg))" stroke-width="8"></circle><circle cx="880" cy="590" r="18" fill="var(--canvas-light-bg)" stroke="color-mix(in srgb, var(--brand-primary) 50%, var(--canvas-light-bg))" stroke-width="8"></circle><circle cx="880" cy="860" r="18" fill="var(--canvas-light-bg)" stroke="color-mix(in srgb, var(--brand-primary) 50%, var(--canvas-light-bg))" stroke-width="8"></circle>
+              <text x="240" y="478" font-size="30" font-weight="600" fill="var(--brand-primary)">Problem interviews</text>
+              <text x="240" y="648" font-size="30" font-weight="600" fill="var(--brand-primary)">First 10 users</text>
+              <text x="400" y="808" font-size="30" font-weight="600" fill="var(--brand-primary)">Retention signal</text>
+              <text x="400" y="988" font-size="30" font-weight="600" fill="var(--brand-primary)">Repeatable channel</text>
+              <text x="600" y="1188" font-size="30" font-weight="700" fill="var(--brand-primary)">Product-market fit</text>
+              <text x="800" y="430" text-anchor="middle" font-size="26" fill="color-mix(in srgb, var(--canvas-light-muted) 72%, var(--canvas-light-bg))">detour:</text>
+              <text x="905" y="600" font-size="28" fill="color-mix(in srgb, var(--canvas-light-muted) 72%, var(--canvas-light-bg))">Premature scaling</text>
+            </svg>
+          </div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1176, &quot;height&quot;: 780 },
+  &quot;primary&quot;:   { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;secondary&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;accent&quot;:    { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;tint&quot;:      { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: null, &quot;min&quot;: 3, &quot;max&quot;: 16, &quot;tsType&quot;: &quot;number&quot; },
+  &quot;font&quot;:      { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;&quot;, &quot;options&quot;: [&quot;&quot;, &quot;Inter&quot;, &quot;Plus Jakarta Sans&quot;, &quot;Space Grotesk&quot;, &quot;Sora&quot;], &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  apply() {
+    const p = this.props || {}; const r = document.documentElement.style;
+    if (p.primary)   r.setProperty('--brand-primary', p.primary);
+    if (p.secondary) r.setProperty('--brand-secondary', p.secondary);
+    if (p.accent)    r.setProperty('--brand-accent', p.accent);
+    if (p.tint != null) r.setProperty('--brand-tint', p.tint + '%');
+    const font = p.font;
+    if (font) {
+      const id = 'tweak-font-' + font.replace(/\s+/g, '-');
+      if (!document.getElementById(id)) { const l=document.createElement('link'); l.id=id; l.rel='stylesheet'; l.href='https://fonts.googleapis.com/css2?family='+font.replace(/\s+/g,'+')+':wght@400;500;600;700;800&display=swap'; document.head.appendChild(l); }
+      r.setProperty('--brand-font', "'" + font + "', system-ui, sans-serif");
+      r.setProperty('--brand-font-display', "'" + font + "', system-ui, sans-serif");
+    }
+  }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

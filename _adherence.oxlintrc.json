@@ -1,0 +1,296 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "app/**",
+              "components/content/**",
+              "components/icons/**",
+              "components/illustration/**",
+              "components/layout/**",
+              "components/preview/**",
+              "components/text/**",
+              "tools/**",
+              "tools/anti-slop/**",
+              "ui_kits/setup/**",
+              "ui_kits/update-center/**",
+              "ui_kits/visual-library/**",
+              "uploads/Design system setup/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Inter))/i]",
+        "message": "Font not provided by the design system. Available: Inter."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BrowserMock'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|cta|emphasis|tone|children|style|key|ref|className|style|children)$/]",
+        "message": "<BrowserMock> doesn't accept that prop. Declared props: title, cta, emphasis, tone, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BrowserMock'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:light|section)$/]",
+        "message": "<BrowserMock> tone must be one of 'light' | 'section'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Canvas'] > JSXAttribute > JSXIdentifier[name!=/^(?:role|margin|density|scale|children|style|key|ref|className|style|children)$/]",
+        "message": "<Canvas> doesn't accept that prop. Declared props: role, margin, density, scale, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Canvas'] > JSXAttribute[name.name='density'] > Literal[value!=/^(?:default|tight)$/]",
+        "message": "<Canvas> density must be one of 'default' | 'tight'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chrome'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|category|position|swipe|inset|style|key|ref|className|style|children)$/]",
+        "message": "<Chrome> doesn't accept that prop. Declared props: name, category, position, swipe, inset, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chrome'] > JSXAttribute[name.name='position'] > Literal[value!=/^(?:top|bottom)$/]",
+        "message": "<Chrome> position must be one of 'top' | 'bottom'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Cta'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|style|key|ref|className|style|children)$/]",
+        "message": "<Cta> doesn't accept that prop. Declared props: children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FeedAuthor'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|headline|link|avatar|time|key|ref|className|style|children)$/]",
+        "message": "<FeedAuthor> doesn't accept that prop. Declared props: name, headline, link, avatar, time."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|color|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, color, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='InfoCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|heading|body|emphasis|number|children|style|key|ref|className|style|children)$/]",
+        "message": "<InfoCard> doesn't accept that prop. Declared props: label, heading, body, emphasis, number, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Quote'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|label|style|key|ref|className|style|children)$/]",
+        "message": "<Quote> doesn't accept that prop. Declared props: children, label, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|caption|size|align|style|key|ref|className|style|children)$/]",
+        "message": "<Stat> doesn't accept that prop. Declared props: value, caption, size, align, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:lg|xl)$/]",
+        "message": "<Stat> size must be one of 'lg' | 'xl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:center|left)$/]",
+        "message": "<Stat> align must be one of 'center' | 'left'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "BrowserMock": {
+        "replaces": []
+      },
+      "Canvas": {
+        "replaces": []
+      },
+      "Chrome": {
+        "replaces": []
+      },
+      "Cta": {
+        "replaces": []
+      },
+      "FeedAuthor": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "InfoCard": {
+        "replaces": []
+      },
+      "Quote": {
+        "replaces": []
+      },
+      "Stat": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-fg",
+      "--accent-soft",
+      "--brand-accent",
+      "--brand-font",
+      "--brand-font-display",
+      "--brand-primary",
+      "--brand-secondary",
+      "--brand-tint",
+      "--canvas-h",
+      "--canvas-light-bg",
+      "--canvas-light-fg",
+      "--canvas-light-line",
+      "--canvas-light-muted",
+      "--canvas-light-soft",
+      "--canvas-loud-bg",
+      "--canvas-loud-fg",
+      "--canvas-loud-line",
+      "--canvas-loud-muted",
+      "--canvas-section-bg",
+      "--canvas-section-fg",
+      "--canvas-section-line",
+      "--canvas-section-muted",
+      "--canvas-section-soft",
+      "--canvas-w",
+      "--font-body",
+      "--font-display",
+      "--fw-black",
+      "--fw-bold",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--fz-body",
+      "--fz-chrome",
+      "--fz-eyebrow",
+      "--fz-head-lg",
+      "--fz-head-md",
+      "--fz-head-sm",
+      "--fz-label",
+      "--fz-quote",
+      "--fz-stat",
+      "--fz-stat-xl",
+      "--fz-subhead",
+      "--lh-body",
+      "--lh-head",
+      "--lh-quote",
+      "--line",
+      "--line-strong",
+      "--margin",
+      "--margin-tight",
+      "--radius-card",
+      "--radius-cta",
+      "--radius-pill",
+      "--safe-band",
+      "--shadow-card",
+      "--sig-color",
+      "--signature",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--tr-chrome",
+      "--tr-eyebrow",
+      "--tr-stat",
+      "--tr-tight"
+    ],
+    "tokenKinds": {
+      "--brand-primary": "color",
+      "--brand-secondary": "color",
+      "--brand-accent": "color",
+      "--brand-tint": "color",
+      "--brand-font": "font",
+      "--brand-font-display": "font",
+      "--signature": "other",
+      "--canvas-loud-bg": "color",
+      "--canvas-loud-fg": "color",
+      "--canvas-loud-muted": "color",
+      "--canvas-loud-line": "color",
+      "--canvas-light-bg": "color",
+      "--canvas-light-fg": "color",
+      "--canvas-light-muted": "color",
+      "--canvas-light-soft": "color",
+      "--canvas-light-line": "color",
+      "--canvas-section-bg": "color",
+      "--canvas-section-fg": "color",
+      "--canvas-section-muted": "color",
+      "--canvas-section-line": "color",
+      "--canvas-section-soft": "color",
+      "--accent": "color",
+      "--accent-soft": "color",
+      "--accent-fg": "color",
+      "--font-body": "font",
+      "--font-display": "font",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-semibold": "font",
+      "--fw-bold": "font",
+      "--fw-black": "font",
+      "--fz-eyebrow": "spacing",
+      "--fz-chrome": "spacing",
+      "--fz-subhead": "spacing",
+      "--fz-body": "spacing",
+      "--fz-label": "spacing",
+      "--fz-head-sm": "spacing",
+      "--fz-head-md": "spacing",
+      "--fz-head-lg": "spacing",
+      "--fz-quote": "spacing",
+      "--fz-stat": "spacing",
+      "--fz-stat-xl": "spacing",
+      "--tr-eyebrow": "spacing",
+      "--tr-chrome": "spacing",
+      "--tr-tight": "spacing",
+      "--tr-stat": "spacing",
+      "--lh-head": "other",
+      "--lh-quote": "other",
+      "--lh-body": "other",
+      "--canvas-w": "spacing",
+      "--canvas-h": "spacing",
+      "--safe-band": "spacing",
+      "--margin": "spacing",
+      "--margin-tight": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--radius-card": "radius",
+      "--radius-pill": "radius",
+      "--radius-cta": "radius",
+      "--line": "spacing",
+      "--line-strong": "spacing",
+      "--shadow-card": "shadow",
+      "--sig-color": "color"
+    },
+    "fontFamilies": [
+      "Inter"
+    ]
+  }
+}

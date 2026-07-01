@@ -1,0 +1,69 @@
+<!-- @dsCard group="Components" viewport="700x460" name="Canvas & Chrome" subtitle="Three canvas roles · identity bar · swipe arrow" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; background: #ececec; font-family: var(--font-body); }
+  .wrap { padding: 22px; }
+  .row { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+  .thumb { width: 194px; height: 243px; border-radius: 3px; overflow: hidden; box-shadow: var(--shadow-card); position: relative; }
+  .thumb > div { position: absolute; top: 0; left: 0; }
+  .cap { font-size: 12px; font-weight: 600; color: #6b6b6b; margin: 8px 0 0; letter-spacing: .02em; }
+  .lbl { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #9a9a9a; margin: 0 0 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="lbl">Canvas roles — loud · light · section</p>
+  <div id="root" class="row"></div>
+</div>
+<script src="../../_ds_bundle.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" data-presets="react">
+  const { Canvas, Chrome, Headline, Mark, Eyebrow } = (window.__dsNS||(window.__dsNS=(function(){var ks;try{ks=Object.keys(window)}catch(e){return{}}for(var i=0;i<ks.length;i++){try{var v=window[ks[i]];if(v&&typeof v==="object"&&v.Headline&&v.Canvas&&v.Stat)return v}catch(e){}}return{}})()));
+  const S = 0.18;
+  function Thumb({ role, cap, children }) {
+    return (
+      <div>
+        <div className="thumb">
+          <Canvas role={role} scale={S}>{children}</Canvas>
+        </div>
+        <p className="cap">{cap}</p>
+      </div>
+    );
+  }
+  function Demo() {
+    return (
+      <React.Fragment>
+        <Thumb role="loud" cap="Loud · cover / back">
+          <Chrome name="Name" category="Category" position="bottom" swipe />
+          <div style={{position:"absolute",left:"var(--margin)",right:"var(--margin)",top:"260px"}}>
+            <Eyebrow>The hook, re-framed</Eyebrow>
+            <Headline size="lg" style={{marginTop:"20px"}}>How I <Mark>doubled</Mark> output</Headline>
+          </div>
+        </Thumb>
+        <Thumb role="light" cap="Light · steps / default">
+          <Chrome name="Name" category="Category" position="top" />
+          <div style={{position:"absolute",left:"var(--margin)",right:"var(--margin)",top:"0",bottom:"0",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+            <Eyebrow>Step 01</Eyebrow>
+            <Headline style={{marginTop:"16px"}}>Start with the <Mark>one</Mark> thing</Headline>
+          </div>
+        </Thumb>
+        <Thumb role="section" cap="Section · chapter marker">
+          <Chrome name="Name" category="Category" position="top" />
+          <div style={{position:"absolute",left:"var(--margin)",right:"var(--margin)",top:"0",bottom:"0",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+            <Eyebrow>The result</Eyebrow>
+            <Headline size="lg" style={{marginTop:"16px"}}>3× <Mark>reply rate</Mark></Headline>
+          </div>
+        </Thumb>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body>
+</html>

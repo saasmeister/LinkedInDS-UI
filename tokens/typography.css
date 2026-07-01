@@ -1,0 +1,44 @@
+/* ============================================================
+   TYPOGRAPHY  ·  scale is a ROLE system, family stays agnostic
+   ------------------------------------------------------------
+   Sizes are tuned for the 1080×1350 canvas (px values are 1:1 on
+   the real artboard). Never below ~24px of *rendered* text on a
+   full visual. Family always flows through --brand-font(-display).
+   ============================================================ */
+
+:root {
+  --font-body:    var(--brand-font);
+  --font-display: var(--brand-font-display);
+
+  /* ---- Weights -------------------------------------------- */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+  --fw-black:    800; /* @kind font */
+
+  /* ---- Role sizes (artboard px) --------------------------- */
+  --fz-eyebrow:    18px;   /* category label / kicker, all-caps, tracked */
+  --fz-chrome:     22px;   /* name + category in the identity bar         */
+  --fz-subhead:    32px;   /* subheading under the headline               */
+  --fz-body:       30px;   /* infographic body copy                       */
+  --fz-label:      16px;   /* small card category labels                  */
+
+  --fz-head-sm:    56px;   /* headline — dense infographic / small        */
+  --fz-head-md:    72px;   /* headline — default single / step            */
+  --fz-head-lg:    88px;   /* headline — cover / context                  */
+  --fz-quote:      62px;   /* pulled quote                                */
+  --fz-stat:      150px;   /* big number on a single                      */
+  --fz-stat-xl:   230px;   /* hero stat on a section result slide         */
+
+  /* ---- Tracking ------------------------------------------- */
+  --tr-eyebrow:  0.14em;
+  --tr-chrome:   0.08em;
+  --tr-tight:   -0.02em;   /* big headlines                               */
+  --tr-stat:    -0.04em;   /* huge numbers                                */
+
+  /* ---- Leading -------------------------------------------- */
+  --lh-head:  1.06; /* @kind other */
+  --lh-quote: 1.22; /* @kind other */
+  --lh-body:  1.45; /* @kind other */
+}

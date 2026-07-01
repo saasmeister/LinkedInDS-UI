@@ -1,0 +1,7 @@
+{
+  "name": "claude-design",
+  "title": "Claude Design + UI",
+  "audience": "Loads into Claude Design as a full design system, interface included. The single surface is LinkedIn Visual Designer.html; the Visual Board, START HERE and icon editor are internal panes under app/, never opened directly.",
+  "files": 392,
+  "overlaid": 1
+}

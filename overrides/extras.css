@@ -1,0 +1,21 @@
+/* ============================================================
+   EXTRAS · OVERRIDES   ←  THIS FILE IS YOURS (the branch)
+   ------------------------------------------------------------
+   Optional. For the things a client MAY adjust beyond the brand
+   layer — a slightly roomier margin, a different card radius, an
+   extra accent. Imported last, so it wins over the master scales.
+
+   Master owns the *defaults* for spacing, radii and type sizes
+   (tokens/spacing.css, tokens/typography.css) and pushes updates
+   to them. Anything you set here overrides those for your branch
+   and is never overwritten.
+
+   Leave empty to inherit everything from master.
+   ============================================================ */
+
+:root {
+  /* examples — uncomment to take ownership of a value */
+  /* --margin: 80px; */              /* content inset (band stays 24px) */
+  /* --radius-card: 20px; */         /* infographic card corners        */
+  /* --accent-2: #0EA5E9; */         /* an extra accent of your own     */
+}

@@ -1,0 +1,30 @@
+<!-- @dsCard group="Brand" viewport="700x240" name="Override mechanism" subtitle="Set 3 vars → every role re-derives. No principle changes." -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; padding:22px 26px; }
+  .grid { display:flex; gap:22px; }
+  pre { margin:0; font-family:ui-monospace,monospace; font-size:12px; line-height:1.7; color:var(--muted,#444); background:var(--soft,#f6f6f6); border-radius:10px; padding:16px 18px; flex:1; }
+  pre b { color:#0a66c2; }
+  .preview { flex:none; width:230px; display:flex; flex-direction:column; gap:10px; }
+  .demo { border-radius:10px; padding:14px 16px; font-weight:700; font-size:15px; }
+</style></head>
+<body>
+  <div class="grid">
+    <pre>:root {
+  --brand-primary:   <b>#0A66C2</b>;
+  --brand-secondary: <b>#16232B</b>;
+  --brand-accent:    <b>#E7A33E</b>;
+  --brand-font: <b>'Inter'</b>;
+}
+/* loud / light / section
+   tints, lines, accents all
+   re-derive automatically */</pre>
+    <div class="preview">
+      <div class="demo" style="background:var(--canvas-loud-bg);color:var(--canvas-loud-fg)">Loud</div>
+      <div class="demo" style="background:var(--canvas-light-bg);color:var(--canvas-light-fg);border:1px solid var(--canvas-light-line)">Light</div>
+      <div class="demo" style="background:var(--canvas-section-bg);color:var(--canvas-section-fg)">Section</div>
+    </div>
+  </div>
+</body></html>

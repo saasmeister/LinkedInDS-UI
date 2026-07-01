@@ -1,0 +1,39 @@
+<!-- @dsCard group="Principles" viewport="700x340" name="Master & branches" subtitle="One master · every client a branch — pull updates, keep your identity" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin:0; font-family:var(--font-body); background:#fff; color:#18181b; padding:22px 26px; }
+  .lead { font-size:13px; color:var(--muted,#8a8a8a); margin:0 0 16px; }
+  .lead b { color:#18181b; }
+  .diagram { display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:16px; }
+  .master { background:var(--brand-primary); color:#fff; border-radius:11px; padding:11px 18px; font-weight:700; font-size:14px; display:flex; align-items:center; gap:10px; }
+  .master span { font-weight:500; font-size:11.5px; opacity:.85; }
+  .arrow { font-size:11px; color:var(--muted,#9aa0a6); font-weight:600; letter-spacing:.04em; }
+  .branches { display:flex; gap:12px; }
+  .br { border:1px solid var(--rule,#e2e4e7); border-radius:10px; padding:9px 13px; text-align:center; background:var(--soft,#fafbfc); }
+  .br b { font-size:12.5px; }
+  .br span { display:block; font-size:10.5px; color:var(--muted,#8a9098); margin-top:2px; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  td { padding:6px 8px; border-top:1px solid var(--rule,#f0f1f3); }
+  .own { font-weight:700; }
+  .push { color:#1f6b43; font-weight:700; }
+  .keep { color:#b45309; font-weight:700; }
+</style></head>
+<body>
+  <p class="lead">This is the <b>master</b>. Every client runs a <b>branch</b> — it keeps pulling the fundamentals from master while owning its own brand and learned variants. So you can <b>push updates to everyone</b> without ever overwriting a client's identity.</p>
+  <div class="diagram">
+    <div class="master">MASTER <span>principles · components · templates · token structure</span></div>
+    <div class="arrow">▼ push versioned updates ▼</div>
+    <div class="branches">
+      <div class="br"><b>Client A</b><span>brand + learned</span></div>
+      <div class="br"><b>Client B</b><span>brand + learned</span></div>
+      <div class="br"><b>Client C</b><span>brand + learned</span></div>
+    </div>
+  </div>
+  <table>
+    <tr><td class="own">Principles · components · templates · token defaults · kits</td><td class="push">MASTER → pushed</td></tr>
+    <tr><td class="own">Brand layer — colours, fonts, signature (overrides/brand.css)</td><td class="keep">BRANCH → kept</td></tr>
+    <tr><td class="own">Learned variants — promoted components, own templates (client/)</td><td class="keep">BRANCH → kept</td></tr>
+  </table>
+</body></html>
